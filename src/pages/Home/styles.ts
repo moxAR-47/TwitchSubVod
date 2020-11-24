@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex: 1;
   align-items: center;
@@ -41,5 +41,17 @@ export const Container = styled.div`
 
   a {
     margin-top: 0.5rem;
+  }
+
+  .player-wrapper {
+    position: relative;
+    padding: 2rem;
+    max-width: 60rem;
+  }
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
