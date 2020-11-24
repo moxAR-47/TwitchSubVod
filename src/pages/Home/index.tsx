@@ -68,7 +68,7 @@ const Home: React.FC = () => {
           value={username}
           placeholder="Streamer Username"
         />
-        <button type="submit" onClick={() => handleSubmit()}>
+        <button type="submit" onClick={handleSubmit}>
           <FiSearch size={14} />
           Search
         </button>
