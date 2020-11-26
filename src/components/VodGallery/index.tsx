@@ -2,22 +2,47 @@ import React from 'react';
 
 import { Container } from './styles';
 
+interface ResultProps {
+  _id: string;
+  preview: {
+    large: string;
+  };
+  broadcast_id: number;
+  title: string;
+  views: number;
+  url: string;
+}
+
 const VodGallery = ({ data }: any) => {
   return (
     <Container>
-      {data.map((result: any) => {
-        const splitString = result.preview.small.split('/')[5];
+      {data.map((result: ResultProps) => {
+        const formatNumber = (num: number) => {
+          if (num > 1000 && num < 1000000) {
+            return (num / 1000).toString().slice(0, 3) + 'K';
+          } else if (num > 1000000) {
+            return (num / 1000000).toString().slice(0, 3) + 'M';
+          } else {
+            return num;
+          }
+        };
+
+        const splitString = result.preview.large.split('/')[5];
 
         let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/chunked/index-dvr.m3u8`;
 
         return (
-          <div key={result.broadcast_id}>
-            <a href={dataUrl} target="_blank" rel="noopener noreferrer">
+          <div key={result._id}>
+            <a
+              href={result.broadcast_id !== 1 ? dataUrl : result.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div>
                 <img src={result.preview.large} alt="thumbnail" />
               </div>
               <strong>{result.title}</strong>
-              <p>Views: {result.views}</p>
+              <p>Views: {formatNumber(result.views)}</p>
             </a>
           </div>
         );
