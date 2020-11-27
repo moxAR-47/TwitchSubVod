@@ -6,6 +6,7 @@ import { FiSearch } from 'react-icons/fi';
 import api from '../../services/api';
 
 import { Container } from './styles';
+import VodGallery from '../../components/VodGallery';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -74,10 +75,13 @@ const Home: React.FC = () => {
         </button>
       </form>
 
-      {videoUrl && (
-        <div className="player-wrapper">
-          <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
-        </div>
+      {videoUrl && twitchData && (
+        <>
+          <VodGallery data={twitchData.videos} />
+          <div className="player-wrapper">
+            <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+          </div>
+        </>
       )}
     </Container>
   );
