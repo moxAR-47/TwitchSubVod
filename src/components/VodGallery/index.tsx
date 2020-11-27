@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Image } from './styles';
 
 interface ResultProps {
   _id: string;
+  animated_preview_url: string;
   preview: {
     large: string;
   };
@@ -12,7 +13,6 @@ interface ResultProps {
   views: number;
   url: string;
 }
-
 const VodGallery = ({ data }: any) => {
   return (
     <Container>
@@ -39,7 +39,10 @@ const VodGallery = ({ data }: any) => {
               rel="noopener noreferrer"
             >
               <div>
-                <img src={result.preview.large} alt="thumbnail" />
+                <Image
+                  url={result.preview.large}
+                  animated={result.animated_preview_url}
+                />
               </div>
               <strong>{result.title}</strong>
               <p>Views: {formatNumber(result.views)}</p>

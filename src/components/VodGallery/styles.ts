@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+interface AnimatedProps {
+  url: string;
+  animated: any;
+}
 
 export const Container = styled.div`
   max-width: 60rem;
@@ -22,19 +27,12 @@ export const Container = styled.div`
       }
 
       div {
-        margin: 0.5rem 0;
-        background: var(--purple);
-      }
-    }
+        max-height: 10.6875rem;
+        margin: 0;
 
-    img {
-      max-width: 19rem;
-      display: flex;
-      object-fit: contain;
-      transition: transform 0.075s ease;
-
-      &:hover {
-        transform: translateX(0.5rem) translateY(-0.5rem);
+        &:hover {
+          background: var(--purple);
+        }
       }
     }
 
@@ -50,5 +48,44 @@ export const Container = styled.div`
 
   div & {
     padding: 1rem 0;
+  }
+`;
+
+const play = keyframes`
+    100% {
+        background-position: 0 -1800px;
+      }
+`;
+
+export const Image = styled.figure<AnimatedProps>`
+  ${(props) =>
+    props.url &&
+    css`
+      background: url(${props.url}) no-repeat top center;
+    `}
+  background-size: contain;
+  margin: 0;
+  display: flex;
+  height: 10.6875rem;
+  width: 19rem;
+  object-fit: contain;
+
+  transition: transform 0.075s ease;
+
+  &:hover {
+    transform: translateX(0.5rem) translateY(-0.5rem);
+    max-height: 10.6875rem;
+    object-fit: cover;
+
+    ${(props) =>
+      props.animated
+        ? css`
+            background: url(${props.animated});
+          `
+        : css`
+            background: url(${props.url});
+          `}
+
+    animation: ${play} 7s steps(10) infinite;
   }
 `;
