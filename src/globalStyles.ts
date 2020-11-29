@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
   input, button {
     border: 0rem;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

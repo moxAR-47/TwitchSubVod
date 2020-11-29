@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactPlayer from 'react-player';
 
 import { FiSearch } from 'react-icons/fi';
 
@@ -28,7 +27,6 @@ const Home: React.FC = () => {
   const [username, setUsername] = useState('');
   const [usernameId, setUsernameId] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
-  const [videoUrl, setVideoUrl] = useState('');
 
   const handleSubmit = () => {
     try {
@@ -36,12 +34,6 @@ const Home: React.FC = () => {
         api
           .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
           .then((response) => {
-            const splitString = response.data.videos[0].preview.small.split(
-              '/',
-            )[5];
-            setVideoUrl(
-              `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/chunked/index-dvr.m3u8`,
-            );
             setTwitchData(response.data);
           });
 
@@ -75,12 +67,9 @@ const Home: React.FC = () => {
         </button>
       </form>
 
-      {videoUrl && twitchData && (
+      {twitchData && (
         <>
           <VodGallery data={twitchData.videos} />
-          <div className="player-wrapper">
-            <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
-          </div>
         </>
       )}
     </Container>
