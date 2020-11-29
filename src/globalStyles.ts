@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --purple: #9147ff;
     --background: #181a1b;
+    --light-background: #323232;
     --text: #f1f1f1;
   }
 

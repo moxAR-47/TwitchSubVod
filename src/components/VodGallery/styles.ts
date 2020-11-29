@@ -20,7 +20,7 @@ export const Container = styled.div`
     a {
       display: flex;
       flex-direction: column;
-      color: #efefef;
+      color: var(--text);
 
       &:hover {
         color: var(--purple);

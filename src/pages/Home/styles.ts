@@ -16,11 +16,11 @@ export const Container = styled.div`
   }
 
   input {
-    background: #323232;
+    background: var(--light-background);
     height: 2rem;
     width: 20rem;
     padding: 0;
-    color: #fefefe;
+    color: var(--text);
     text-align: center;
     margin-bottom: 0.5rem;
   }
@@ -29,11 +29,11 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #9147ff;
+    background: var(--purple);
     height: 2rem;
     width: 20rem;
-    border: 2px solid #9147ff;
-    color: #fefefe;
+    border: 2px solid var(--purple);
+    color: var(--text);
 
     & svg {
       margin-right: 0.5rem;
