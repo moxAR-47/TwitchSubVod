@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/twitch-sub-vod/static/js/main.7579c704.chunk.js",
-    "main.js.map": "/twitch-sub-vod/static/js/main.7579c704.chunk.js.map",
+    "main.js": "/twitch-sub-vod/static/js/main.81bb6355.chunk.js",
+    "main.js.map": "/twitch-sub-vod/static/js/main.81bb6355.chunk.js.map",
     "runtime-main.js": "/twitch-sub-vod/static/js/runtime-main.45eab2e4.js",
     "runtime-main.js.map": "/twitch-sub-vod/static/js/runtime-main.45eab2e4.js.map",
     "static/js/2.9899b815.chunk.js": "/twitch-sub-vod/static/js/2.9899b815.chunk.js",
     "static/js/2.9899b815.chunk.js.map": "/twitch-sub-vod/static/js/2.9899b815.chunk.js.map",
     "index.html": "/twitch-sub-vod/index.html",
-    "precache-manifest.084dc81b36569278b38435d49bb1080f.js": "/twitch-sub-vod/precache-manifest.084dc81b36569278b38435d49bb1080f.js",
+    "precache-manifest.e2c610666ad8dba4795d8ff22cac253e.js": "/twitch-sub-vod/precache-manifest.e2c610666ad8dba4795d8ff22cac253e.js",
     "service-worker.js": "/twitch-sub-vod/service-worker.js",
     "static/js/2.9899b815.chunk.js.LICENSE.txt": "/twitch-sub-vod/static/js/2.9899b815.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.45eab2e4.js",
     "static/js/2.9899b815.chunk.js",
-    "static/js/main.7579c704.chunk.js"
+    "static/js/main.81bb6355.chunk.js"
   ]
 }
