@@ -25,7 +25,7 @@ export const Container = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  button {
+  button[type='submit'] {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,16 +42,5 @@ export const Container = styled.div`
 
   a {
     margin-top: 0.5rem;
-  }
-
-  .player-wrapper {
-    position: relative;
-    max-width: 60rem;
-  }
-
-  .react-player {
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 `;

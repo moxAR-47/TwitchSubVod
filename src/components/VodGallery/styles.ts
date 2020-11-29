@@ -16,11 +16,16 @@ export const Container = styled.div`
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
+    width: 19rem;
 
-    a {
+    button {
+      width: 19rem;
+      padding: 0;
       display: flex;
       flex-direction: column;
+      background-color: transparent;
       color: var(--text);
+      font-family: 'Roboto', sans-serif;
 
       &:hover {
         color: var(--purple);
@@ -38,11 +43,15 @@ export const Container = styled.div`
 
     strong {
       word-wrap: break-word;
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
     p {
-      margin: 0.1rem;
+      margin: 0;
       font-size: 0.75rem;
+      font-weight: normal;
     }
   }
 
