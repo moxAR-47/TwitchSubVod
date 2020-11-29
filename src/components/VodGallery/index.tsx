@@ -20,6 +20,15 @@ interface ResultProps {
 const VodGallery = ({ data }: any) => {
   const [vodUrl, setVodUrl] = useState(''); //use useContext later to clear this when we search again
 
+  const timeToHMS = (s: number) => {
+    const h = Math.floor(s / 3600);
+    s -= h * 3600;
+    const m = Math.floor(s / 60);
+    s -= m * 60;
+    // s = Math.floor(s);
+    return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
+  };
+
   return (
     <>
       {vodUrl && <VodModal videoUrl={vodUrl} />}
@@ -53,7 +62,9 @@ const VodGallery = ({ data }: any) => {
                   <Image
                     url={result.preview.large}
                     animated={result.animated_preview_url}
-                  />
+                  >
+                    <span>{timeToHMS(result.length)}</span>
+                  </Image>
                 </div>
                 <strong>{result.title}</strong>
                 <p>Views: {formatNumber(result.views)}</p>
@@ -67,3 +78,13 @@ const VodGallery = ({ data }: any) => {
 };
 
 export default VodGallery;
+
+// function secondsTimeSpanToHMS(s) {
+//   var h = Math.floor(s/3600); //Get whole hours
+//   s -= h*3600;
+//   var m = Math.floor(s/60); //Get remaining minutes
+//   s -= m*60;
+//   return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
+// }
+
+// secondsTimeSpanToHMS(125);

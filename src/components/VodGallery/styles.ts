@@ -97,4 +97,14 @@ export const Image = styled.figure<AnimatedProps>`
 
     animation: ${play} 7s steps(10) infinite;
   }
+
+  span {
+    background: rgb(24, 26, 27, 0.6);
+    color: #f1f1f1;
+    position: absolute;
+    margin: 0.5rem;
+    padding: 0.15rem 0.2rem;
+    border-radius: 0.1rem;
+    font-weight: bold;
+  }
 `;
