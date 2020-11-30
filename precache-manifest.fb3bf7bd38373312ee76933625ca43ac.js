@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "66bbabd105f5cef05bf34d2be1f151e1",
+    "revision": "b0218b4fcd81d6186c1738476e6ded28",
     "url": "/twitch-sub-vod/index.html"
   },
   {
-    "revision": "5f4a7f5d3cdab0160e68",
-    "url": "/twitch-sub-vod/static/js/2.9899b815.chunk.js"
+    "revision": "b089c8babc4757688169",
+    "url": "/twitch-sub-vod/static/js/2.a2ea037d.chunk.js"
   },
   {
     "revision": "9b318b6fb13190fe82c0677e9264b3c7",
-    "url": "/twitch-sub-vod/static/js/2.9899b815.chunk.js.LICENSE.txt"
+    "url": "/twitch-sub-vod/static/js/2.a2ea037d.chunk.js.LICENSE.txt"
   },
   {
     "revision": "cb58642616546f016efd",
