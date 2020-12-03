@@ -1,38 +1,46 @@
-# React Typescript Boilerplate
+<p align="center">
+    <a href="https://github.com/Alissonsleal/twitch-sub-vod/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Alissonsleal/twitch-sub-vod?color=sucess&style=flat-square"></a>
+    <a href="https://github.com/Alissonsleal/twitch-sub-vod/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Alissonsleal/twitch-sub-vod?color=sucess&style=flat-square"></a>
+    <a href="https://github.com/Alissonsleal/twitch-sub-vod/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Alissonsleal/twitch-sub-vod?color=sucess&style=flat-square"></a>
+    <a href="https://github.com/Alissonsleal/twitch-sub-vod/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Alissonsleal/twitch-sub-vod?color=sucess&style=flat-square"></a>
+    <a href="https://github.com/Alissonsleal/"><img alt="Alisson Leal GitHub Profile" src="https://img.shields.io/badge/made%20by-Alisson%20Leal-sucess?style=flat-square&logo=appveyor"></a>
+</p>
 
-I created this boilerplate to increase my productivity when creating a typescript react app.
+# Twitch Sub Vod
 
-I'm using the Airbnb default lint option.
+Watch any twitch vod either sub-only or public for free. Just insert the streamer username and select a video to watch. It's only available in the highest resolution. It works in the browser and in your mobile phone.
 
-## Main Dependencies
+Watch now: [Twitch Sub Vod](https://TwitchSubVod.vercel.app)
 
-- [x] React 16.13.1
-- [x] Typescript 3.7.2
-- [x] React-Dom 16.13.1
-- [x] React-Icons 3.11.0
-- [x] React-Router-Dom 5.2.0
-- [x] React-Spring 8.0.27
-- [x] Styled-Components 5.2.0
-- [x] Polished 4.0.2
-- [x] Axios 0.20.0
+## Images
 
-## Main Developer Dependencies
+<p align="center">
 
-- [x] Eslint 6.8.0
-- [x] Prettier 2.1.2
-- [x] Eslint-config-prettier 6.12.0
-- [x] Eslint-config-airbnb 18.2.0
+<img  width="300" src="https://i.imgur.com/sln5U6H.png">
 
-## How to use
+<img  width="300" src="https://i.imgur.com/ph7Qnsq.png">
 
-Clone this repo using `git clone https://github.com/Alissonsleal/react-typescript-boilerplate.git <YOUR_PROJECT_NAME>`
+<img  width="300" src="https://i.imgur.com/3vBIXJI.png">
 
-Go into your project directory `cd <YOUR_PROJECT_NAME>`
+</p>
 
-Remove .git to clean the git repo `rm -rf .git`
+## Built With:
 
-Change the name of your project inside `package.json`
+- [x] React
+- [x] Typescript
+- [x] Axios
+- [x] Styled-Components
+- [x] TwitchAPI
+- [x] Deployed to Vercel
 
-Install dependencies with `yarn` or `npm install`
+## Contributions
 
-Run your React App with `yarn start` or `npm run start`
+Feel free to contribute to this repo.
+
+## Author Info
+
+- Twitter - [@alissonsleal](https://twitter.com/alissonsleal)
+- Discord - [Alisson#0629](https://discord.com/)
+- StackOverflow - [Alisson Leal](https://stackoverflow.com/users/14122260/alisson-leal)
+
+[Go to the top](#Consulta-Placa)
