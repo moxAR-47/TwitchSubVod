@@ -9,7 +9,7 @@ const Routes: React.FC = () => (
       <Route path="/DeletedClips">
         <DeletedClips />
       </Route>
-      <Route path="/">
+      <Route path="/" exact>
         <Home />
       </Route>
     </Switch>

@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 
 import { FiSearch } from 'react-icons/fi';
 
-import { Container } from './styles';
+import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
 
 const DeletedClips: React.FC = () => {
@@ -65,107 +65,109 @@ const DeletedClips: React.FC = () => {
 
   return (
     <Container>
-      <h1>Deleted Twitch Clips</h1>
+      <AnimationContainer>
+        <h1>Deleted Twitch Clips</h1>
 
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-      >
-        <input
-          type="text"
-          name="vodId"
-          onChange={(event) => setVodId(event.target.value)}
-          value={vodId}
-          placeholder="Vod ID"
-        />
-        <div className="time-container">
-          <div className="starting-time">
-            <input
-              type="number"
-              name="Starting Point H"
-              onChange={(event) => setStartingPointH(event.target.value)}
-              value={startingPointH}
-              placeholder="h"
-              min="0"
-            />
-            <input
-              type="number"
-              name="Starting Point M"
-              onChange={(event) => setStartingPointM(event.target.value)}
-              value={startingPointM}
-              placeholder="m"
-              min="0"
-              max="59"
-            />
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <input
+            type="text"
+            name="vodId"
+            onChange={(event) => setVodId(event.target.value)}
+            value={vodId}
+            placeholder="Vod ID"
+          />
+          <div className="time-container">
+            <div className="starting-time">
+              <input
+                type="number"
+                name="Starting Point H"
+                onChange={(event) => setStartingPointH(event.target.value)}
+                value={startingPointH}
+                placeholder="h"
+                min="0"
+              />
+              <input
+                type="number"
+                name="Starting Point M"
+                onChange={(event) => setStartingPointM(event.target.value)}
+                value={startingPointM}
+                placeholder="m"
+                min="0"
+                max="59"
+              />
 
-            <input
-              type="number"
-              name="Starting Point S"
-              onChange={(event) => setStartingPointS(event.target.value)}
-              value={startingPointS}
-              placeholder="s"
-              min="0"
-              max="59"
-            />
-          </div>
-          <p>to</p>
-          <div className="ending-time">
-            <input
-              type="number"
-              name="Ending Point H"
-              onChange={(event) => setEndingPointH(event.target.value)}
-              value={endingPointH}
-              placeholder="h"
-              min="0"
-            />
-            <input
-              type="number"
-              name="Ending Point M"
-              onChange={(event) => setEndingPointM(event.target.value)}
-              value={endingPointM}
-              placeholder="m"
-              min="0"
-              max="59"
-            />
-            <input
-              type="number"
-              name="Ending Point S"
-              onChange={(event) => setEndingPointS(event.target.value)}
-              value={endingPointS}
-              placeholder="s"
-              min="0"
-              max="59"
-            />
-          </div>
-        </div>
-        {}
-        <button type="submit" onClick={handleSubmit}>
-          <FiSearch size={14} />
-          Search
-        </button>
-      </form>
-
-      {/* {loading >= 1 && loading <= 99 &&   <p>{loading}%</p>} */}
-
-      <LinkBox home />
-
-      {data && (
-        <>
-          {console.log(data)}
-          {data.map((item) => (
-            <div className="video-container" key={item}>
-              <ReactPlayer
-                key={item}
-                url={item}
-                controls
-                width="100%"
-                height="100%"
+              <input
+                type="number"
+                name="Starting Point S"
+                onChange={(event) => setStartingPointS(event.target.value)}
+                value={startingPointS}
+                placeholder="s"
+                min="0"
+                max="59"
               />
             </div>
-          ))}
-        </>
-      )}
+            <p>to</p>
+            <div className="ending-time">
+              <input
+                type="number"
+                name="Ending Point H"
+                onChange={(event) => setEndingPointH(event.target.value)}
+                value={endingPointH}
+                placeholder="h"
+                min="0"
+              />
+              <input
+                type="number"
+                name="Ending Point M"
+                onChange={(event) => setEndingPointM(event.target.value)}
+                value={endingPointM}
+                placeholder="m"
+                min="0"
+                max="59"
+              />
+              <input
+                type="number"
+                name="Ending Point S"
+                onChange={(event) => setEndingPointS(event.target.value)}
+                value={endingPointS}
+                placeholder="s"
+                min="0"
+                max="59"
+              />
+            </div>
+          </div>
+          {}
+          <button type="submit" onClick={handleSubmit}>
+            <FiSearch size={14} />
+            Search
+          </button>
+        </form>
+
+        {/* {loading >= 1 && loading <= 99 &&   <p>{loading}%</p>} */}
+
+        <LinkBox home />
+
+        {data && (
+          <>
+            {console.log(data)}
+            {data.map((item) => (
+              <div className="video-container" key={item}>
+                <ReactPlayer
+                  key={item}
+                  url={item}
+                  controls
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+            ))}
+          </>
+        )}
+      </AnimationContainer>
     </Container>
   );
 };
