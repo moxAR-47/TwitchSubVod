@@ -16,13 +16,13 @@ const DeletedClips: React.FC = () => {
   const [endingPointH, setEndingPointH] = useState('');
   const [endingPointM, setEndingPointM] = useState('');
   const [endingPointS, setEndingPointS] = useState('');
-  const [loading, setLoading] = useState(Number);
+  /* const [loading, setLoading] = useState(Number); */
 
   const hmsToSeconds = (h: any, m: any, s: any) => {
     return +h * 3600 + +m * 60 + +s;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     try {
       const startingSeconds = hmsToSeconds(
         startingPointH,
@@ -37,28 +37,25 @@ const DeletedClips: React.FC = () => {
 
       console.log(endingSeconds - startingSeconds);
 
-      if (vodId.length === 11 && endingSeconds - startingSeconds < 300) {
+      if (vodId.length === 11 && endingSeconds - startingSeconds <= 300) {
         for (let i = startingSeconds; i < endingSeconds; i++) {
+          // there must be a lighter way to do this (instead of looping through every second)
           let url = `https://twitch-cors.herokuapp.com/https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
-
           axios
-            .get(`${url}`)
+            .head(`${url}`)
             .then(() => {
-              // there must be a lighter way to do this (instead of looping through every second)
-
               setData((data) => [
                 ...data,
                 `https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`,
               ]);
-              setLoading((endingSeconds / startingSeconds) * 100);
             })
-            .catch((error) => {
+            .catch(() => {
               return;
             });
         }
       } else {
         throw new Error(
-          'Seach time is bigger than 5 minutes or Vod Id is Invalid',
+          'Search time is longer than 5 minutes or Vod Id is Invalid',
         );
       }
     } catch (err) {
@@ -149,7 +146,7 @@ const DeletedClips: React.FC = () => {
         </button>
       </form>
 
-      {/* {loading >= 0 && loading <= 99 && <p>{loading}%</p>} */}
+      {/* {loading >= 1 && loading <= 99 &&   <p>{loading}%</p>} */}
 
       <LinkBox home />
 
@@ -157,7 +154,7 @@ const DeletedClips: React.FC = () => {
         <>
           {console.log(data)}
           {data.map((item) => (
-            <div className="video-container">
+            <div className="video-container" key={item}>
               <ReactPlayer
                 key={item}
                 url={item}
