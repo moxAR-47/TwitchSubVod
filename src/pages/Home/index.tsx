@@ -6,6 +6,7 @@ import api from '../../services/api';
 
 import { Container } from './styles';
 import VodGallery from '../../components/VodGallery';
+import LinkBox from '../../components/LinkBox';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -66,6 +67,8 @@ const Home: React.FC = () => {
           Search
         </button>
       </form>
+
+      <LinkBox clips />
 
       {twitchData && (
         <>
