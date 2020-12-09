@@ -15,13 +15,14 @@ const appearFromBottom = keyframes`
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 0 2rem;
 `;
 
 export const AnimationContainer = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +34,19 @@ export const AnimationContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    .time-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 2rem;
+        margin: 0 0.4rem;
+        appearance: textfield;
+      }
+    }
   }
 
   input {
@@ -60,7 +74,8 @@ export const AnimationContainer = styled.div`
     }
   }
 
-  a {
-    margin-top: 0.5rem;
+  .video-container {
+    max-width: 60rem;
+    margin-top: 2rem;
   }
 `;

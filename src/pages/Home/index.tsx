@@ -4,8 +4,9 @@ import { FiSearch } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import { Container } from './styles';
+import { Container, AnimationContainer } from './styles';
 import VodGallery from '../../components/VodGallery';
+import LinkBox from '../../components/LinkBox';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -48,30 +49,34 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <h1>Twitch Sub Vod</h1>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-        }}
-      >
-        <input
-          type="text"
-          name="username"
-          onChange={(event) => setUsername(event.target.value)}
-          value={username}
-          placeholder="Streamer Username"
-        />
-        <button type="submit" onClick={handleSubmit}>
-          <FiSearch size={14} />
-          Search
-        </button>
-      </form>
+      <AnimationContainer>
+        <h1>Twitch Sub Vod</h1>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+          }}
+        >
+          <input
+            type="text"
+            name="username"
+            onChange={(event) => setUsername(event.target.value)}
+            value={username}
+            placeholder="Streamer Username"
+          />
+          <button type="submit" onClick={handleSubmit}>
+            <FiSearch size={14} />
+            Search
+          </button>
+        </form>
 
-      {twitchData && (
-        <>
-          <VodGallery data={twitchData.videos} />
-        </>
-      )}
+        <LinkBox clips />
+
+        {twitchData && (
+          <>
+            <VodGallery data={twitchData.videos} />
+          </>
+        )}
+      </AnimationContainer>
     </Container>
   );
 };
