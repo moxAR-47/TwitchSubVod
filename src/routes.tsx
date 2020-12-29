@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DeletedClips from './pages/DeletedClips';
+import DeletedVods from './pages/DeletedVods';
 import Home from './pages/Home';
 
 const Routes: React.FC = () => (
@@ -8,6 +9,9 @@ const Routes: React.FC = () => (
     <Switch>
       <Route path="/DeletedClips">
         <DeletedClips />
+      </Route>
+      <Route path="/DeletedVods">
+        <DeletedVods />
       </Route>
       <Route path="/" exact>
         <Home />
