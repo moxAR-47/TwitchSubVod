@@ -12,6 +12,12 @@ const appearFromBottom = keyframes`
 
 `;
 
+export const spin = keyframes`
+  100% {
+    transform: rotate(360deg)
+  }
+`;
+
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
@@ -35,15 +41,24 @@ export const AnimationContainer = styled.div`
     justify-content: center;
     flex-direction: column;
   }
-
-  input {
+  .input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background: var(--light-background);
     height: 2rem;
     max-width: 20rem;
-    padding: 0;
-    color: var(--text);
-    text-align: center;
+    padding: 0.5rem;
     margin-bottom: 0.5rem;
+
+    input {
+      flex: 1;
+      background: var(--light-background);
+      color: var(--text);
+      text-align: center;
+      appearance: textfield;
+    }
   }
 
   .quality-selection {
@@ -80,5 +95,13 @@ export const AnimationContainer = styled.div`
   .video-container {
     max-width: 60rem;
     margin: 2rem 0;
+  }
+
+  span {
+    margin-top: 2rem;
+
+    & svg {
+      animation: ${spin} 4s linear infinite;
+    }
   }
 `;

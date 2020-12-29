@@ -2,35 +2,38 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiLoader } from 'react-icons/fi';
 
 import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
+import InfoModal from '../../components/InfoModal';
 
 const DeletedVods: React.FC = () => {
   const [vodId, setVodId] = useState('');
   const [data, setData] = useState('');
   const [vodQuality, setVodQuality] = useState('chunked');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_CORS}${process.env.REACT_APP_DELETED_VOD_WORKER}${vodId}`,
-      );
+    if (vodId.length === 11) {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `${process.env.REACT_APP_CORS}${process.env.REACT_APP_DELETED_VOD_WORKER}${vodId}`,
+        );
 
-      const fullData = response.data;
-      console.log(fullData);
+        const link = response.data
+          .split(`https://vod-metro.twitch.tv/`)[1]
+          .split('/')[0];
 
-      const link = response.data
-        .split(`https://vod-metro.twitch.tv/`)[1]
-        .split('/')[0];
-
-      console.log(link);
-
-      let finalLink = `${process.env.REACT_APP_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
-      setData(finalLink);
-    } catch (err) {
-      console.warn(err);
+        let finalLink = `${process.env.REACT_APP_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
+        setData(finalLink);
+        setLoading(false);
+      } catch (err) {
+        console.warn(err);
+      }
+    } else {
+      alert('Invalid Vod ID');
     }
   };
 
@@ -44,13 +47,16 @@ const DeletedVods: React.FC = () => {
             event.preventDefault();
           }}
         >
-          <input
-            type="text"
-            name="vodId"
-            onChange={(event) => setVodId(event.target.value)}
-            value={vodId}
-            placeholder="Vod ID"
-          />
+          <div className="input-box">
+            <input
+              type="number"
+              name="vodId"
+              onChange={(event) => setVodId(event.target.value)}
+              value={vodId}
+              placeholder="Vod ID"
+            />
+            <InfoModal />
+          </div>
 
           <div className="quality-selection">
             <label htmlFor="quality">Select a quality: </label>
@@ -77,9 +83,8 @@ const DeletedVods: React.FC = () => {
 
         <LinkBox home />
 
-        {data && (
+        {data ? (
           <>
-            {/* {console.log(data)} */}
             <div className="video-container">
               <ReactPlayer
                 key={data}
@@ -90,6 +95,12 @@ const DeletedVods: React.FC = () => {
               />
             </div>
           </>
+        ) : (
+          loading && (
+            <span>
+              <FiLoader size={32} />
+            </span>
+          )
         )}
       </AnimationContainer>
     </Container>
