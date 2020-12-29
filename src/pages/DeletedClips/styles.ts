@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { spin } from '../DeletedVods/styles';
 
 const appearFromBottom = keyframes`
   from {
@@ -35,6 +36,21 @@ export const AnimationContainer = styled.div`
     justify-content: center;
     flex-direction: column;
 
+    .input-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--light-background);
+      max-width: 20rem;
+      padding: 0 0.5rem;
+
+      input {
+        flex: 1;
+        appearance: textfield;
+      }
+    }
+
     .time-container {
       display: flex;
       flex-direction: row;
@@ -56,7 +72,6 @@ export const AnimationContainer = styled.div`
     padding: 0;
     color: var(--text);
     text-align: center;
-    margin-bottom: 0.5rem;
   }
 
   button[type='submit'] {
@@ -71,6 +86,12 @@ export const AnimationContainer = styled.div`
 
     & svg {
       margin-right: 0.5rem;
+    }
+  }
+
+  span {
+    & svg {
+      animation: ${spin} 4s linear infinite;
     }
   }
 
