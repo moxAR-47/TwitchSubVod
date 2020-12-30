@@ -8,21 +8,32 @@
 
 # Twitch Sub Vod
 
-Watch any twitch vod either sub-only or public for free. Just insert the streamer username and select a video to watch. It's only available in the highest resolution. It works in the browser and in your mobile phone.
+Watch any deleted clip or deleted vod on twitch for free. It also works with sub-only vods. Just insert the streamer username and select a video to watch. It works in the browser and in your mobile phone.
 
 Watch now: [Twitch Sub Vod](https://TwitchSubVod.vercel.app)
 
-## Images
+## Features
 
-<p align="center">
+### Sub-only vods
 
-<img  width="300" src="https://i.imgur.com/sln5U6H.png">
+  <p align="center">
+    <img  max-width="768" src="https://i.imgur.com/zD3lA08.png">
+  </p>
+<br />
 
-<img  width="300" src="https://i.imgur.com/ph7Qnsq.png">
+### Deleted clips
 
-<img  width="300" src="https://i.imgur.com/3vBIXJI.png">
+  <p align="center">
+    <img  max-width="768" src="https://i.imgur.com/fmbQBEF.png">
+  </p>
+<br />
 
-</p>
+### Deleted vods
+
+  <p align="center">
+    <img  max-width="768" src="https://i.imgur.com/KWRq11W.png">
+  </p>
+<br />
 
 ## Built With:
 
@@ -35,11 +46,11 @@ Watch now: [Twitch Sub Vod](https://TwitchSubVod.vercel.app)
 
 ## Contributions
 
-Feel free to contribute to this repo.
+Feel free to contribute or report issues. Also, if you have any ideas on new names hit me up.
 
 ## Author Info
 
-- Twitter - [@alissonsleal](https://twitter.com/alissonsleal)
+- Twitter - [@alissonsleal](https://twitter.com/alissonsleal) <i>dms are open</i>
 - Discord - [Alisson#0629](https://discord.com/)
 - StackOverflow - [Alisson Leal](https://stackoverflow.com/users/14122260/alisson-leal)
 
