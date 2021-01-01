@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const appearFromBottom = keyframes`
+export const appearFromBottom = keyframes`
   from {
     opacity: 0;
     transform: translateY(2rem);
@@ -15,6 +15,8 @@ const appearFromBottom = keyframes`
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
+  flex: 1;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 2rem;

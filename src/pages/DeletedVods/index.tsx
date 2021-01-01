@@ -7,6 +7,7 @@ import { FiSearch, FiLoader } from 'react-icons/fi';
 import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
 import InfoModal from '../../components/InfoModal';
+import Footer from '../../components/Footer';
 
 const DeletedVods: React.FC = () => {
   const [vodId, setVodId] = useState('');
@@ -103,6 +104,7 @@ const DeletedVods: React.FC = () => {
           )
         )}
       </AnimationContainer>
+      <Footer />
     </Container>
   );
 };

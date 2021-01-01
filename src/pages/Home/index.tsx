@@ -7,6 +7,7 @@ import api from '../../services/api';
 import { Container, AnimationContainer } from './styles';
 import VodGallery from '../../components/VodGallery';
 import LinkBox from '../../components/LinkBox';
+import Footer from '../../components/Footer';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -78,6 +79,7 @@ const Home: React.FC = () => {
           </>
         )}
       </AnimationContainer>
+      <Footer />
     </Container>
   );
 };

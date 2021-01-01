@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { appearFromTop } from '../../components/Footer/styles';
 
 const appearFromBottom = keyframes`
   from {
@@ -9,7 +10,6 @@ const appearFromBottom = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-
 `;
 
 export const spin = keyframes`
@@ -95,6 +95,8 @@ export const AnimationContainer = styled.div`
   .video-container {
     max-width: 60rem;
     margin: 2rem 0;
+
+    animation: ${appearFromTop} 0.5s ease-out;
   }
 
   span {

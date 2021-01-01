@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import { appearFromTop } from '../Footer/styles';
 
 interface AnimatedProps {
   url: string;
@@ -80,6 +81,7 @@ export const Image = styled.figure<AnimatedProps>`
   object-fit: contain;
 
   transition: transform 0.075s ease;
+  animation: ${appearFromTop} 0.25s ease-out;
 
   &:hover {
     transform: translateX(0.5rem) translateY(-0.5rem);
