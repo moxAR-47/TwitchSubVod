@@ -11,6 +11,6 @@ export const Container = styled.div`
     margin-right: 0.5rem;
   }
   a {
-    color: white;
+    color: var(--text);
   }
 `;

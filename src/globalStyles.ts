@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --purple: #9147ff;
-    --background: #181a1b;
-    --light-background: #323232;
-    --text: #f1f1f1;
+    --background: ${(props: any) => props.theme.background};
+    --light-background: ${(props: any) => props.theme.lightBackground};
+    --text: ${(props: any) => props.theme.text};
   }
 
   * {
@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
   color: var(--text);
   font-weight: 400;
   background-color: var(--background);
+
+  transition: background-color, color, 0.2s linear;
   }
 
   a {
