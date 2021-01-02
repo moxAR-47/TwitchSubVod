@@ -48,6 +48,10 @@ Watch now: [Twitch Sub Vod](https://TwitchSubVod.vercel.app)
 
 Feel free to contribute or report issues. Also, if you have any ideas on new names hit me up.
 
+## Disclaimer
+
+This project is in no way affiliated with Twitch Interactive, Inc. Amazon.com, Inc., or any company mentioned on this page.
+
 ## Author Info
 
 - Twitter - [@alissonsleal](https://twitter.com/alissonsleal) <i>dms are open</i>

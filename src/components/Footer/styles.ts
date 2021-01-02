@@ -13,6 +13,8 @@ from {
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  text-align: center;
   position: sticky;
   top: 100%;
   padding: 1rem;
@@ -22,5 +24,19 @@ export const Container = styled.div`
   a {
     color: var(--text);
     font-weight: 700;
+  }
+
+  span {
+    position: relative;
+    display: flex;
+    visibility: hidden;
+    padding: 1rem;
+  }
+
+  &:hover {
+    span {
+      animation: all 0.2s linear;
+      visibility: visible;
+    }
   }
 `;
