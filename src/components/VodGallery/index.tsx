@@ -17,6 +17,17 @@ interface ResultProps {
   length: number; //in seconds
   game: string;
 }
+
+export const formatNumber = (num: number) => {
+  if (num > 1000 && num < 1000000) {
+    return (num / 1000).toString().slice(0, 3) + 'K';
+  } else if (num > 1000000) {
+    return (num / 1000000).toString().slice(0, 3) + 'M';
+  } else {
+    return num;
+  }
+};
+
 const VodGallery = ({ data }: any) => {
   const [vodUrl, setVodUrl] = useState(''); //use useContext later to clear this when we search again
 
@@ -35,16 +46,6 @@ const VodGallery = ({ data }: any) => {
 
       <Container>
         {data.map((result: ResultProps) => {
-          const formatNumber = (num: number) => {
-            if (num > 1000 && num < 1000000) {
-              return (num / 1000).toString().slice(0, 3) + 'K';
-            } else if (num > 1000000) {
-              return (num / 1000000).toString().slice(0, 3) + 'M';
-            } else {
-              return num;
-            }
-          };
-
           const splitString = result.preview.large.split('/')[5];
 
           let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/chunked/index-dvr.m3u8`;

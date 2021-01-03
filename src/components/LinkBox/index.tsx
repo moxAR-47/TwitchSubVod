@@ -8,9 +8,10 @@ interface LinksProps {
   home?: boolean;
   clips?: boolean;
   vods?: boolean;
+  download?: boolean;
 }
 
-const LinkBox = ({ home, clips, vods }: LinksProps) => {
+const LinkBox = ({ home, clips, vods, download }: LinksProps) => {
   return (
     <Container>
       {home && (
@@ -34,7 +35,12 @@ const LinkBox = ({ home, clips, vods }: LinksProps) => {
         </Link>
       )}
 
-      {/* <Link to="/DeletedClips">Seach for deleted vods</Link> */}
+      {download && (
+        <Link to="/DownloadClip">
+          <FiSearch size={14} />
+          Download Twitch Clips
+        </Link>
+      )}
     </Container>
   );
 };

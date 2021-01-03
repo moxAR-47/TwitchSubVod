@@ -72,6 +72,7 @@ const Home: React.FC = () => {
 
         <LinkBox clips />
         <LinkBox vods />
+        <LinkBox download />
 
         {twitchData && (
           <>

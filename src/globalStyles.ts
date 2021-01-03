@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --purple: #9147ff;
+    --dark-purple: #7c2cf4;
     --background: ${(props: any) => props.theme.background};
     --light-background: ${(props: any) => props.theme.lightBackground};
     --text: ${(props: any) => props.theme.text};
