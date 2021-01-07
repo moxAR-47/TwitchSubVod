@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
@@ -10,6 +11,11 @@ import InfoModal from '../../components/InfoModal';
 import Footer from '../../components/Footer';
 
 const DeletedClips: React.FC = () => {
+  useEffect(() => {
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.pageview('/DeletedClips');
+  }, []);
+
   const [vodId, setVodId] = useState('');
   const [data, setData] = useState(['']);
   const [loading, setLoading] = useState(false);
@@ -71,6 +77,11 @@ const DeletedClips: React.FC = () => {
           'Search time is longer than 5 minutes or Vod Id is Invalid',
         );
       }
+
+      ReactGA.event({
+        category: 'Button',
+        action: `User searched a clip ${vodId}`,
+      });
     } catch (err) {
       alert(
         'Search time is longer than 5 minutes or Vod Id is Invalid or Search time is invalid',

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 
 import { FiSearch, FiDownload } from 'react-icons/fi';
 
@@ -20,6 +21,11 @@ interface TwitchVideoProps {
 }
 
 const DownloadClip: React.FC = () => {
+  useEffect(() => {
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.pageview('/DownloadClip');
+  }, []);
+
   const [clip, setClip] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
 
@@ -32,7 +38,11 @@ const DownloadClip: React.FC = () => {
     try {
       const { data } = await api.get(`clips/${clipSlug(clip)}`);
       setTwitchData(data);
-      console.log(twitchData);
+
+      ReactGA.event({
+        category: 'Button',
+        action: `User searched a clip ${clipSlug}`,
+      });
     } catch (err) {
       console.log(err);
     }

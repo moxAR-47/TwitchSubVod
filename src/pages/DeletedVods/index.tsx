@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
@@ -10,6 +11,11 @@ import InfoModal from '../../components/InfoModal';
 import Footer from '../../components/Footer';
 
 const DeletedVods: React.FC = () => {
+  useEffect(() => {
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.pageview('/DeletedVods');
+  }, []);
+
   const [vodId, setVodId] = useState('');
   const [data, setData] = useState('');
   const [vodQuality, setVodQuality] = useState('chunked');
@@ -30,6 +36,11 @@ const DeletedVods: React.FC = () => {
         let finalLink = `${process.env.REACT_APP_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
         setData(finalLink);
         setLoading(false);
+
+        ReactGA.event({
+          category: 'Button',
+          action: `User searched a deleted vod ${vodId}`,
+        });
       } catch (err) {
         console.warn(err);
       }

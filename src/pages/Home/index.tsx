@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 
 import { FiSearch } from 'react-icons/fi';
 
@@ -26,6 +27,11 @@ interface TwitchVideoProps {
 }
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.pageview('/');
+  }, []);
+
   const [username, setUsername] = useState('');
   const [usernameId, setUsernameId] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
@@ -40,6 +46,11 @@ const Home: React.FC = () => {
           });
 
         setUsernameId(response.data.users[0]._id);
+
+        ReactGA.event({
+          category: 'Button',
+          action: `User searched ${username}`,
+        });
       });
     } catch (err) {
       console.log(err);
