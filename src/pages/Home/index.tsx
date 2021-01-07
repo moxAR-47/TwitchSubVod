@@ -28,7 +28,9 @@ interface TwitchVideoProps {
 
 const Home: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+      testMode: process.env.NODE_ENV === 'test',
+    });
     ReactGA.pageview('/');
   }, []);
 
@@ -71,11 +73,12 @@ const Home: React.FC = () => {
           <input
             type="text"
             name="username"
+            aria-label="username"
             onChange={(event) => setUsername(event.target.value)}
             value={username}
             placeholder="Streamer Username"
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" aria-label="submit" onClick={handleSubmit}>
             <FiSearch size={14} />
             Search
           </button>

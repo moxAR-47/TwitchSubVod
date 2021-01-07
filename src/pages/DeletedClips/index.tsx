@@ -12,7 +12,9 @@ import Footer from '../../components/Footer';
 
 const DeletedClips: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+      testMode: process.env.NODE_ENV === 'test',
+    });
     ReactGA.pageview('/DeletedClips');
   }, []);
 
@@ -126,6 +128,7 @@ const DeletedClips: React.FC = () => {
                 onChange={(event) => setStartingPointM(event.target.value)}
                 value={startingPointM}
                 placeholder="m"
+                aria-label="startingM"
                 min="0"
                 max="59"
               />
@@ -156,6 +159,7 @@ const DeletedClips: React.FC = () => {
                 onChange={(event) => setEndingPointM(event.target.value)}
                 value={endingPointM}
                 placeholder="m"
+                aria-label="endingM"
                 min="0"
                 max="59"
               />
@@ -171,7 +175,7 @@ const DeletedClips: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit} aria-label="submit">
             <FiSearch size={14} />
             Search
           </button>

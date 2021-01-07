@@ -12,7 +12,9 @@ import Footer from '../../components/Footer';
 
 const DeletedVods: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+      testMode: process.env.NODE_ENV === 'test',
+    });
     ReactGA.pageview('/DeletedVods');
   }, []);
 
@@ -87,7 +89,7 @@ const DeletedVods: React.FC = () => {
             </select>
           </div>
 
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit} aria-label="submit">
             <FiSearch size={14} />
             Search
           </button>
