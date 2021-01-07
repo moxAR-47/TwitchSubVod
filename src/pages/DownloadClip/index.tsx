@@ -22,7 +22,9 @@ interface TwitchVideoProps {
 
 const DownloadClip: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`);
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+      testMode: process.env.NODE_ENV === 'test',
+    });
     ReactGA.pageview('/DownloadClip');
   }, []);
 
@@ -63,8 +65,9 @@ const DownloadClip: React.FC = () => {
             onChange={(event) => setClip(event.target.value)}
             value={clip}
             placeholder="https://clips.twitch.tv/CarefulNiceJaguarRickroll"
+            aria-label="DownloadClipInput"
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={handleSubmit} aria-label="submit">
             <FiSearch size={14} />
             Download Clip
           </button>
