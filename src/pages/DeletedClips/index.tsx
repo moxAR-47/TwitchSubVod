@@ -83,8 +83,8 @@ const DeletedClips: React.FC = () => {
       }
 
       ReactGA.event({
-        category: 'Button',
-        action: `User searched a clip ${vodId}`,
+        category: 'SearchedDeletedClip',
+        action: `${vodId}`,
       });
     } catch (err) {
       alert(

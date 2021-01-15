@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 
 import VodModal from '../VodModal';
 
@@ -29,6 +30,12 @@ export const formatNumber = (num: number) => {
 };
 
 const VodGallery = ({ data }: any) => {
+  useEffect(() => {
+    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+      testMode: process.env.NODE_ENV === 'test',
+    });
+  }, []);
+
   const [vodUrl, setVodUrl] = useState(''); //use useContext later to clear this when we search again
 
   const timeToHMS = (s: number) => {
@@ -57,6 +64,11 @@ const VodGallery = ({ data }: any) => {
                 onClick={() => {
                   setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
                   window.scrollTo({ behavior: 'smooth', top: 0 });
+
+                  ReactGA.event({
+                    category: 'SearchedUserForDeletedVod',
+                    action: `${dataUrl}`,
+                  });
                 }}
               >
                 <div>
@@ -79,13 +91,3 @@ const VodGallery = ({ data }: any) => {
 };
 
 export default VodGallery;
-
-// function secondsTimeSpanToHMS(s) {
-//   var h = Math.floor(s/3600); //Get whole hours
-//   s -= h*3600;
-//   var m = Math.floor(s/60); //Get remaining minutes
-//   s -= m*60;
-//   return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
-// }
-
-// secondsTimeSpanToHMS(125);
