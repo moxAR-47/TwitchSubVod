@@ -22,6 +22,7 @@ const DeletedVods: React.FC = () => {
   const [data, setData] = useState('');
   const [vodQuality, setVodQuality] = useState('chunked');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async () => {
     if (vodId.length === 11) {
@@ -39,12 +40,21 @@ const DeletedVods: React.FC = () => {
         setData(finalLink);
         setLoading(false);
 
+        const responseVodUrl = await axios.get(`${finalLink}`);
+        if (responseVodUrl.status === 200 || responseVodUrl.status === 304) {
+          setError(false);
+        } else {
+          setError(true);
+        }
+
         ReactGA.event({
           category: 'Button',
           action: `User searched a deleted vod ${vodId}`,
         });
       } catch (err) {
         console.warn(err);
+        setError(true);
+        setLoading(false);
       }
     } else {
       alert('Invalid Vod ID');
@@ -97,7 +107,7 @@ const DeletedVods: React.FC = () => {
 
         <LinkBox home />
 
-        {data ? (
+        {data && !error ? (
           <>
             <div className="video-container">
               <ReactPlayer
@@ -109,11 +119,13 @@ const DeletedVods: React.FC = () => {
               />
             </div>
           </>
+        ) : loading ? (
+          <span>
+            <FiLoader size={32} />
+          </span>
         ) : (
-          loading && (
-            <span>
-              <FiLoader size={32} />
-            </span>
+          error && (
+            <span>The VOD you're looking for is no longer available</span>
           )
         )}
       </AnimationContainer>

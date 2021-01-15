@@ -21,6 +21,7 @@ const DeletedClips: React.FC = () => {
   const [vodId, setVodId] = useState('');
   const [data, setData] = useState(['']);
   const [loading, setLoading] = useState(false);
+  const [noData, setNoData] = useState(false);
   const [startingPointH, setStartingPointH] = useState('');
   const [startingPointM, setStartingPointM] = useState('');
   const [startingPointS, setStartingPointS] = useState('');
@@ -37,6 +38,7 @@ const DeletedClips: React.FC = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
+      setNoData(true);
     }, 10000);
   }
 
@@ -204,6 +206,8 @@ const DeletedClips: React.FC = () => {
             ))}
           </>
         )}
+
+        {noData && <span>There are no clips in the time specified</span>}
       </AnimationContainer>
       <Footer />
     </Container>
