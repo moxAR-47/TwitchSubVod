@@ -50,8 +50,8 @@ const Home: React.FC = () => {
         setUsernameId(response.data.users[0]._id);
 
         ReactGA.event({
-          category: 'Button',
-          action: `User searched ${username}`,
+          category: 'SearchedUserForDeletedVod',
+          action: `${username}`,
         });
       });
     } catch (err) {

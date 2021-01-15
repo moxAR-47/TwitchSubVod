@@ -42,8 +42,8 @@ const DownloadClip: React.FC = () => {
       setTwitchData(data);
 
       ReactGA.event({
-        category: 'Button',
-        action: `User searched a clip ${clipSlug}`,
+        category: 'DownloadedClip',
+        action: `https://clips.twitch.tv/${clipSlug}`,
       });
     } catch (err) {
       console.log(err);
