@@ -90,7 +90,6 @@ const DeletedClips: React.FC = () => {
       alert(
         'Search time is longer than 5 minutes or Vod Id is Invalid or Search time is invalid',
       );
-      console.warn(err);
     }
   };
 
