@@ -29,7 +29,7 @@ const DeletedVods: React.FC = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${process.env.REACT_APP_CORS}${process.env.REACT_APP_DELETED_VOD_WORKER}${vodId}`,
+          `${process.env.REACT_APP_CORS_WORKER}${process.env.REACT_APP_DELETED_VOD_WORKER}${vodId}`,
         );
 
         const link = response.data

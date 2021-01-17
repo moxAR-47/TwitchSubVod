@@ -63,7 +63,7 @@ const DeletedClips: React.FC = () => {
         setLoading(true);
         for (let i = startingSeconds; i < endingSeconds; i++) {
           // there must be a lighter way to do this (instead of looping through every second)
-          let url = `https://twitch-cors.herokuapp.com/https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
+          let url = `${process.env.REACT_APP_CORS_WORKER}https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
           axios
             .head(`${url}`)
             .then(() => {
