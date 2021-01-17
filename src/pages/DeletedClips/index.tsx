@@ -38,8 +38,8 @@ const DeletedClips: React.FC = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-      setNoData(true);
-    }, 10000);
+      !data && setNoData(true);
+    }, 5000);
   }
 
   const handleSubmit = async () => {
