@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --purple: #9147ff;
     --dark-purple: #7c2cf4;
+    --button-text: #f1f1f1;
     --background: ${(props: any) => props.theme.background};
     --light-background: ${(props: any) => props.theme.lightBackground};
     --text: ${(props: any) => props.theme.text};

@@ -82,7 +82,7 @@ export const AnimationContainer = styled.div`
     height: 2rem;
     width: 20rem;
     border: 2px solid var(--purple);
-    color: var(--text);
+    color: var(--button-text);
 
     & svg {
       margin-right: 0.5rem;
