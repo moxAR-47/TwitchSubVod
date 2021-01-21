@@ -20,8 +20,9 @@ export const Container = styled.div`
     place-content: center;
     visibility: hidden;
     width: 12rem;
-    height: 4.5rem;
-    background-color: var(--purple);
+    /* height: 4.5rem; */
+    padding: 0;
+    background-color: var(--dark-purple);
     color: #fff;
     text-align: center;
     border-radius: 0.5rem;

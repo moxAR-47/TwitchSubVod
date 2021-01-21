@@ -3,20 +3,28 @@ import { FiInfo } from 'react-icons/fi';
 
 import { Container } from './styles';
 
-const InfoModal: React.FC = () => {
+interface InfoModalProps {
+  text?: string;
+}
+
+const InfoModal: React.FC<InfoModalProps> = ({ text }) => {
   return (
     <Container>
       <div className="info-box">
-        <p>
-          You can get the Vod Id from
-          <a
-            href="https://twitchtracker.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            twitchtracker.com
-          </a>
-        </p>
+        {text ? (
+          <p>{text}</p>
+        ) : (
+          <p>
+            You can get the Vod Id from
+            <a
+              href="https://twitchtracker.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              twitchtracker.com
+            </a>
+          </p>
+        )}
       </div>
       <FiInfo size={18} />
     </Container>
