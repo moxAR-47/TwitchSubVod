@@ -9,6 +9,7 @@ import { Container, AnimationContainer } from './styles';
 import VodGallery from '../../components/VodGallery';
 import LinkBox from '../../components/LinkBox';
 import Footer from '../../components/Footer';
+import QualitySelection from '../../components/QualitySelection';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -35,8 +36,8 @@ const Home: React.FC = () => {
   }, []);
 
   const [username, setUsername] = useState('');
-  const [usernameId, setUsernameId] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
+  const [quality, setQuality] = useState('chunked');
 
   const handleSubmit = () => {
     try {
@@ -47,8 +48,6 @@ const Home: React.FC = () => {
             setTwitchData(response.data);
           });
 
-        setUsernameId(response.data.users[0]._id);
-
         ReactGA.event({
           category: 'SearchedUserForDeletedVod',
           action: `${username}`,
@@ -58,7 +57,7 @@ const Home: React.FC = () => {
       console.log(err);
     }
 
-    (usernameId || twitchData) && console.log(usernameId, twitchData);
+    (quality || twitchData) && console.log(quality, twitchData);
   };
 
   return (
@@ -78,6 +77,9 @@ const Home: React.FC = () => {
             value={username}
             placeholder="Streamer Username"
           />
+          <QualitySelection
+            onChange={(event: any) => setQuality(event.target.value)}
+          />
           <button type="submit" aria-label="submit" onClick={handleSubmit}>
             <FiSearch size={14} />
             Search
@@ -90,7 +92,10 @@ const Home: React.FC = () => {
 
         {twitchData && (
           <>
-            <VodGallery data={twitchData.videos} />
+            <VodGallery
+              data={twitchData.videos}
+              quality={quality === 'Source' ? 'chunked' : quality}
+            />
           </>
         )}
       </AnimationContainer>

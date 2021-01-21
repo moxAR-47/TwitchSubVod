@@ -29,7 +29,7 @@ export const formatNumber = (num: number) => {
   }
 };
 
-const VodGallery = ({ data }: any) => {
+const VodGallery = ({ data, quality }: any) => {
   useEffect(() => {
     ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
@@ -43,7 +43,7 @@ const VodGallery = ({ data }: any) => {
     s -= h * 3600;
     const m = Math.floor(s / 60);
     s -= m * 60;
-    // s = Math.floor(s);
+
     return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
   };
 
@@ -55,7 +55,7 @@ const VodGallery = ({ data }: any) => {
         {data.map((result: ResultProps) => {
           const splitString = result.preview.large.split('/')[5];
 
-          let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/chunked/index-dvr.m3u8`;
+          let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/${quality}/index-dvr.m3u8`;
 
           return (
             <div key={result._id}>
@@ -67,7 +67,7 @@ const VodGallery = ({ data }: any) => {
 
                   ReactGA.event({
                     category: 'SearchedUserForDeletedVod',
-                    action: `${dataUrl}`,
+                    action: `${splitString}`,
                   });
                 }}
               >

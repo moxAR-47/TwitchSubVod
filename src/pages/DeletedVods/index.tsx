@@ -9,6 +9,7 @@ import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
 import InfoModal from '../../components/InfoModal';
 import Footer from '../../components/Footer';
+import QualitySelection from '../../components/QualitySelection';
 
 const DeletedVods: React.FC = () => {
   useEffect(() => {
@@ -82,22 +83,9 @@ const DeletedVods: React.FC = () => {
             <InfoModal />
           </div>
 
-          <div className="quality-selection">
-            <label htmlFor="quality">Select a quality: </label>
-            <select
-              name="quality"
-              id="quality"
-              onChange={(event) => setVodQuality(event.target.value)}
-            >
-              <option defaultValue="chunked">Source</option>
-              <option value="720p60">720p60</option>
-              <option value="720p30">720p30</option>
-              <option value="480p30">480p</option>
-              <option value="360p30">360p</option>
-              <option value="160p30">160p</option>
-              <option value="audio_only">audio</option>
-            </select>
-          </div>
+          <QualitySelection
+            onChange={(event: any) => setVodQuality(event.target.value)}
+          />
 
           <button type="submit" onClick={handleSubmit} aria-label="submit">
             <FiSearch size={14} />

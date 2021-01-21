@@ -61,22 +61,6 @@ export const AnimationContainer = styled.div`
     }
   }
 
-  .quality-selection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-
-    select {
-      width: 50%;
-      background-color: var(--light-background);
-      color: var(--text);
-      border: none;
-      padding: 0.25rem;
-    }
-  }
-
   button[type='submit'] {
     display: flex;
     align-items: center;
