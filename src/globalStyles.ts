@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: var(purple);
+    color: var(--purple);
   }
 
   input, button {
@@ -36,6 +36,20 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  button[type="submit"]{
+    transition: all ease 0.2s;
+
+    &:hover{
+      background: var(--dark-purple);
+      border: var(--dark-purple);
+    }
+
+    &:active{
+      background: var(--dark-purple);
+      border: var(--dark-purple);
+    }
   }
 `;
 

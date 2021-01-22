@@ -1,9 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
+import { FiAlertCircle } from 'react-icons/fi';
 
 import VodModal from '../VodModal';
 
-import { Container, Image } from './styles';
+import { Error, Container, Image } from './styles';
 
 interface ResultProps {
   _id: string;
@@ -37,6 +39,31 @@ const VodGallery = ({ data, quality }: any) => {
   }, []);
 
   const [vodUrl, setVodUrl] = useState(''); //use useContext later to clear this when we search again
+  const [error, setError] = useState(false);
+
+  const handleVideo = async (result: any) => {
+    const splitString = result.preview.large.split('/')[5];
+    let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/${quality}/index-dvr.m3u8`;
+
+    try {
+      const checkIfVideoExists = await axios.head(`${dataUrl}`);
+      console.log(checkIfVideoExists);
+      if (checkIfVideoExists.status !== 403) {
+        setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    }
+
+    window.scrollTo({ behavior: 'smooth', top: 300 });
+
+    ReactGA.event({
+      category: 'SearchedUserForDeletedVod',
+      action: `${splitString}`,
+    });
+  };
 
   const timeToHMS = (s: number) => {
     const h = Math.floor(s / 3600);
@@ -50,27 +77,18 @@ const VodGallery = ({ data, quality }: any) => {
   return (
     <>
       {vodUrl && <VodModal videoUrl={vodUrl} />}
+      {error && !vodUrl && (
+        <Error>
+          <FiAlertCircle size={36} />
+          <span>Couldn't find this video</span>
+        </Error>
+      )}
 
       <Container>
         {data.map((result: ResultProps) => {
-          const splitString = result.preview.large.split('/')[5];
-
-          let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/${quality}/index-dvr.m3u8`;
-
           return (
             <div key={result._id}>
-              <button
-                type="button"
-                onClick={() => {
-                  setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
-                  window.scrollTo({ behavior: 'smooth', top: 0 });
-
-                  ReactGA.event({
-                    category: 'SearchedUserForDeletedVod',
-                    action: `${splitString}`,
-                  });
-                }}
-              >
+              <button type="button" onClick={() => handleVideo(result)}>
                 <div>
                   <Image
                     url={result.preview.large}
