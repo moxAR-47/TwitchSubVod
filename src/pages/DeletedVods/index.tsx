@@ -3,13 +3,15 @@ import ReactGA from 'react-ga';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
-import { FiSearch, FiLoader } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 
 import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
 import InfoModal from '../../components/InfoModal';
 import Footer from '../../components/Footer';
 import QualitySelection from '../../components/QualitySelection';
+import ErrorModal from '../../components/ErrorModal';
+import LoadingModal from '../../components/LoadingModal';
 
 const DeletedVods: React.FC = () => {
   useEffect(() => {
@@ -22,6 +24,7 @@ const DeletedVods: React.FC = () => {
   const [vodId, setVodId] = useState('');
   const [data, setData] = useState('');
   const [vodQuality, setVodQuality] = useState('chunked');
+  const [username, setUsername] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -36,6 +39,8 @@ const DeletedVods: React.FC = () => {
         const link = response.data
           .split(`https://vod-metro.twitch.tv/`)[1]
           .split('/')[0];
+
+        setUsername(link.split('_')[1]);
 
         let finalLink = `${process.env.REACT_APP_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
         setData(finalLink);
@@ -97,6 +102,7 @@ const DeletedVods: React.FC = () => {
 
         {data && !error ? (
           <>
+            <h1>Streamer: {username}</h1>
             <div className="video-container">
               <ReactPlayer
                 key={data}
@@ -108,12 +114,10 @@ const DeletedVods: React.FC = () => {
             </div>
           </>
         ) : loading ? (
-          <span>
-            <FiLoader size={32} />
-          </span>
+          <LoadingModal />
         ) : (
           error && (
-            <span>The VOD you're looking for is no longer available</span>
+            <ErrorModal message="The VOD you're looking for is no longer available" />
           )
         )}
       </AnimationContainer>

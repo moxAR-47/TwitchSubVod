@@ -10,6 +10,8 @@ import VodGallery from '../../components/VodGallery';
 import LinkBox from '../../components/LinkBox';
 import Footer from '../../components/Footer';
 import QualitySelection from '../../components/QualitySelection';
+import ErrorModal from '../../components/ErrorModal';
+import LoadingModal from '../../components/LoadingModal';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -38,23 +40,39 @@ const Home: React.FC = () => {
   const [username, setUsername] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
   const [quality, setQuality] = useState('chunked');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
+    setLoading(true);
     try {
+      setError('');
       api.get(`users?login=${username}`).then((response) => {
-        api
-          .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
-          .then((response) => {
-            setTwitchData(response.data);
-          });
+        try {
+          api
+            .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
+            .then((response: any) => {
+              setTwitchData(response.data);
+              setLoading(false);
+              console.log(response.data._total);
+              if (response.data._total === 0) {
+                setError('This streamer does not have any available streams');
+                setLoading(false);
+              }
+            });
 
-        ReactGA.event({
-          category: 'SearchedUserForDeletedVod',
-          action: `${username}`,
-        });
+          ReactGA.event({
+            category: 'SearchedUserForDeletedVod',
+            action: `${username}`,
+          });
+        } catch (err) {
+          setError('This user does not exist or is unavailable');
+          setLoading(false);
+        }
       });
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
 
     (quality || twitchData) && console.log(quality, twitchData);
@@ -86,9 +104,13 @@ const Home: React.FC = () => {
           </button>
         </form>
 
+        {error && <ErrorModal message={error} />}
+
         <LinkBox clips />
         <LinkBox vods />
         <LinkBox download />
+
+        {loading && <LoadingModal />}
 
         {twitchData && (
           <>

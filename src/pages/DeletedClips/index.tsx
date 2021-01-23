@@ -3,12 +3,14 @@ import ReactGA from 'react-ga';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 
-import { FiLoader, FiSearch } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 
 import { Container, AnimationContainer } from './styles';
 import LinkBox from '../../components/LinkBox';
 import InfoModal from '../../components/InfoModal';
 import Footer from '../../components/Footer';
+import ErrorModal from '../../components/ErrorModal';
+import LoadingModal from '../../components/LoadingModal';
 
 const DeletedClips: React.FC = () => {
   useEffect(() => {
@@ -38,8 +40,8 @@ const DeletedClips: React.FC = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-      !data && setNoData(true);
-    }, 5000);
+      data[0] === '' && setNoData(true);
+    }, 3000);
   }
 
   const handleSubmit = async () => {
@@ -184,11 +186,7 @@ const DeletedClips: React.FC = () => {
 
         <LinkBox home />
 
-        {loading && (
-          <span>
-            <FiLoader size={32} />
-          </span>
-        )}
+        {loading && <LoadingModal />}
 
         {data && (
           <>
@@ -206,7 +204,10 @@ const DeletedClips: React.FC = () => {
           </>
         )}
 
-        {noData && <span>There are no clips in the time specified</span>}
+        {noData && (
+          <ErrorModal message="There are no clips in the specified time" />
+        )}
+        {data && console.log(data)}
       </AnimationContainer>
       <Footer />
     </Container>

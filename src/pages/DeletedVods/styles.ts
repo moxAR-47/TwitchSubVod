@@ -12,12 +12,6 @@ const appearFromBottom = keyframes`
   }
 `;
 
-export const spin = keyframes`
-  100% {
-    transform: rotate(360deg)
-  }
-`;
-
 export const Container = styled.div`
   min-height: 100vh;
   display: flex;
@@ -76,18 +70,14 @@ export const AnimationContainer = styled.div`
     }
   }
 
+  h1 {
+    margin-bottom: 0;
+  }
+
   .video-container {
     max-width: 60rem;
     margin: 2rem 0;
 
     animation: ${appearFromTop} 0.5s ease-out;
-  }
-
-  span {
-    margin-top: 2rem;
-
-    & svg {
-      animation: ${spin} 4s linear infinite;
-    }
   }
 `;
