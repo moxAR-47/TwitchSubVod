@@ -207,7 +207,7 @@ const DeletedClips: React.FC = () => {
         {noData && (
           <ErrorModal message="There are no clips in the specified time" />
         )}
-        {data && console.log(data)}
+        {/* {data && console.log(data)} */}
       </AnimationContainer>
       <Footer />
     </Container>

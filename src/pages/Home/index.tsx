@@ -75,7 +75,7 @@ const Home: React.FC = () => {
       setLoading(false);
     }
 
-    (quality || twitchData) && console.log(quality, twitchData);
+    // (quality || twitchData) && console.log(quality, twitchData);
   };
 
   return (
