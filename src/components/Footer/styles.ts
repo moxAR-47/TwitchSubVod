@@ -22,6 +22,11 @@ export const Container = styled.div`
 
   animation: ${appearFromTop} 0.5s ease-in;
 
+  .kofi-img {
+    border: 0px;
+    height: 2.5rem;
+  }
+
   a {
     color: var(--text);
     font-weight: 700;

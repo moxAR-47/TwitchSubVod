@@ -10,7 +10,9 @@
 
 Watch any deleted clip or deleted vod on twitch for free. It also works with sub-only vods. Just insert the streamer username and select a video to watch. You can also download Twitch Clips with this application. It works in the browser and in your mobile phone.
 
-Watch now: [Twitch Sub Vod](https://TwitchSubVod.vercel.app)
+Watch now: [Twitch Sub Vod](https://pogu.live)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K63GGFK)
 
 ## Features
 
