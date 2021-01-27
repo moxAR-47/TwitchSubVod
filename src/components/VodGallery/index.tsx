@@ -82,7 +82,12 @@ const VodGallery = ({ data, quality }: any) => {
     <>
       {data && <h1>Streamer: {data[0].channel.display_name}</h1>}
       {vodUrl && <VodModal videoUrl={vodUrl} />}
-      {error && !vodUrl && <ErrorModal message="Couldn't find this video" />}
+      {error && !vodUrl && quality === 'chunked' && (
+        <ErrorModal message="We couldn't find this video" />
+      )}
+      {error && !vodUrl && quality !== 'chunked' && (
+        <ErrorModal message="We couldn't find this video, try changing the quality to 'Source'" />
+      )}
 
       <Container>
         {data.map((result: ResultProps) => {
