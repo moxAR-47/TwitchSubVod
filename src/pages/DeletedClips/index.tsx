@@ -69,8 +69,8 @@ const DeletedClips: React.FC = () => {
           axios
             .head(`${url}`)
             .then(() => {
-              setData((data) => [
-                ...data,
+              setData((oldData) => [
+                ...oldData,
                 `https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`,
               ]);
             })

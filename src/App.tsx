@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './components/themes';
-import GlobalStyle from './globalStyles';
+import GlobalStyle from './GlobalStyle';
 import Routes from './routes';
 
 function App() {

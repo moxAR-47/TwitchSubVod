@@ -35,7 +35,7 @@ export const formatNumber = (num: number) => {
 };
 
 const VodGallery = ({ data, quality }: any) => {
-  console.log(data[0].channel.display_name);
+  // console.log(data[0].channel.display_name);
   useEffect(() => {
     ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
@@ -51,7 +51,7 @@ const VodGallery = ({ data, quality }: any) => {
 
     try {
       const checkIfVideoExists = await axios.head(`${dataUrl}`);
-      console.log(checkIfVideoExists);
+      // console.log(checkIfVideoExists);
       if (checkIfVideoExists.status !== 403) {
         setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
       } else {

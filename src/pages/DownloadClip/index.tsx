@@ -54,7 +54,7 @@ const DownloadClip: React.FC = () => {
         action: `https://clips.twitch.tv/${clipSlug}`,
       });
     } catch (err) {
-      console.log(err);
+      console.warn(err);
       setLoading(false);
       setError('Could not find the clip');
     }

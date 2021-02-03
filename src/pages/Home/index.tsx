@@ -51,11 +51,11 @@ const Home: React.FC = () => {
         try {
           api
             .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
-            .then((response: any) => {
-              setTwitchData(response.data);
+            .then((channelResponse: any) => {
+              setTwitchData(channelResponse.data);
               setLoading(false);
-              console.log(response.data._total);
-              if (response.data._total === 0) {
+              // console.log(channelResponse.data._total);
+              if (channelResponse.data._total === 0) {
                 setError('This streamer does not have any available streams');
                 setLoading(false);
               }
