@@ -1,0 +1,6 @@
+Sitemap: https://pogu.live/sitemap.xml
+
+User-agent: *
+Allow: /*
+
+Disallow:
