@@ -80,7 +80,7 @@ const VodGallery = ({ data, quality }: any) => {
 
   return (
     <>
-      {data && <h1>Streamer: {data[0].channel.display_name}</h1>}
+      {data && !error && <h1>Streamer: {data[0].channel.display_name}</h1>}
       {vodUrl && <VodModal videoUrl={vodUrl} />}
       {error && !vodUrl && quality === 'chunked' && (
         <ErrorModal message="We couldn't find this video" />

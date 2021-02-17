@@ -44,38 +44,44 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
-    setLoading(true);
-    try {
-      setError('');
-      api.get(`users?login=${username}`).then((response) => {
-        try {
-          api
-            .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
-            .then((channelResponse: any) => {
-              setTwitchData(channelResponse.data);
-              setLoading(false);
-              // console.log(channelResponse.data._total);
-              if (channelResponse.data._total === 0) {
-                setError('This streamer does not have any available streams');
+    if (username) {
+      setLoading(true);
+      try {
+        setError('');
+        api.get(`users?login=${username}`).then((response) => {
+          try {
+            api
+              .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
+              .then((channelResponse: any) => {
+                channelResponse.data.videos.length !== 0 &&
+                  setTwitchData(channelResponse.data);
                 setLoading(false);
-              }
+                // console.log(channelResponse.data._total);
+                if (channelResponse.data._total === 0) {
+                  setError(`${username} does not have any available streams`);
+                  setLoading(false);
+                }
+              });
+
+            ReactGA.event({
+              category: 'SearchedUserForDeletedVod',
+              action: `${username}`,
             });
+          } catch (err) {
+            setError('This user does not exist or is unavailable');
+            setLoading(false);
+          }
+        });
+      } catch (err) {
+        console.warn(err);
+        setLoading(false);
+        setError('Something went wrong');
+      }
 
-          ReactGA.event({
-            category: 'SearchedUserForDeletedVod',
-            action: `${username}`,
-          });
-        } catch (err) {
-          setError('This user does not exist or is unavailable');
-          setLoading(false);
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      setLoading(false);
+      // (quality || twitchData) && console.log(quality, twitchData);
+    } else {
+      setError('Enter a streamer username');
     }
-
-    // (quality || twitchData) && console.log(quality, twitchData);
   };
 
   return (
@@ -112,7 +118,7 @@ const Home: React.FC = () => {
 
         {loading && <LoadingModal />}
 
-        {twitchData && (
+        {twitchData && !error && (
           <>
             <VodGallery
               data={twitchData.videos}
