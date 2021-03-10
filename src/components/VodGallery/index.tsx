@@ -46,8 +46,10 @@ const VodGallery = ({ data, quality }: any) => {
   const [error, setError] = useState(false);
 
   const handleVideo = async (result: any) => {
-    const splitString = result.animated_preview_url.split('/')[3];
-    let dataUrl = `https://twitch-cors.herokuapp.com/https://vod-secure.twitch.tv/${splitString}/${quality}/index-dvr.m3u8`;
+    const splitString = await result.animated_preview_url.split('/')[3];
+    const hostUrl = await result.animated_preview_url.split('/')[2];
+    console.log(result.animated_preview_url.split('/')[1]);
+    let dataUrl = `https://twitch-cors.herokuapp.com/https://${hostUrl}/${splitString}/${quality}/index-dvr.m3u8`;
 
     try {
       const checkIfVideoExists = await axios.head(`${dataUrl}`);
