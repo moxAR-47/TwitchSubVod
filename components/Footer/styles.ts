@@ -1,15 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-
-export const appearFromTop = keyframes`
-from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import styled from 'styled-components';
+import { appearFromTop } from '~/utils/animations/appearFromTop';
 
 export const Container = styled.div`
   display: flex;

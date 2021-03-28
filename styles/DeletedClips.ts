@@ -1,16 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-
-const appearFromBottom = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-`;
+import styled from 'styled-components';
+import { appearFromBottom } from '~/utils/animations/appearFromBottom';
 
 export const Container = styled.div`
   min-height: 100vh;
