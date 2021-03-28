@@ -14,7 +14,7 @@ import LoadingModal from '~/components/LoadingModal';
 
 const DeletedClips: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+    ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
     });
     ReactGA.pageview('/DeletedClips');
@@ -65,7 +65,7 @@ const DeletedClips: React.FC = () => {
         setLoading(true);
         for (let i = startingSeconds; i < endingSeconds; i++) {
           // there must be a lighter way to do this (instead of looping through every second)
-          let url = `${process.env.REACT_APP_CORS_WORKER}https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
+          let url = `${process.env.NEXT_PUBLIC_CORS_WORKER}https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
           axios
             .head(`${url}`)
             .then(() => {

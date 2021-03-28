@@ -15,7 +15,7 @@ import LoadingModal from '~/components/LoadingModal';
 
 const DeletedVods: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+    ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
     });
     ReactGA.pageview('/DeletedVods');
@@ -33,7 +33,7 @@ const DeletedVods: React.FC = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `${process.env.REACT_APP_CORS_WORKER}${process.env.REACT_APP_DELETED_VOD_WORKER}${vodId}`,
+          `${process.env.NEXT_PUBLIC_CORS_WORKER}${process.env.NEXT_PUBLIC_DELETED_VOD_WORKER}${vodId}`,
         );
 
         const link = response.data
@@ -42,7 +42,7 @@ const DeletedVods: React.FC = () => {
 
         setUsername(link.split('_')[1]);
 
-        let finalLink = `${process.env.REACT_APP_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
+        let finalLink = `${process.env.NEXT_PUBLIC_CORS}https://vod-metro.twitch.tv/${link}/${vodQuality}/index-dvr.m3u8`;
         setData(finalLink);
         setLoading(false);
 

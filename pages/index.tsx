@@ -31,7 +31,7 @@ interface TwitchVideoProps {
 
 const Home: React.FC = () => {
   useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_TRACKING}`, {
+    ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
     });
     ReactGA.pageview('/');
