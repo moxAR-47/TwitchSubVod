@@ -35,7 +35,6 @@ export const formatNumber = (num: number) => {
 };
 
 const VodGallery = ({ data, quality }: any) => {
-  // console.log(data[0].channel.display_name);
   useEffect(() => {
     ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
@@ -48,12 +47,10 @@ const VodGallery = ({ data, quality }: any) => {
   const handleVideo = async (result: any) => {
     const splitString = await result.animated_preview_url.split('/')[3];
     const hostUrl = await result.animated_preview_url.split('/')[2];
-    console.log(result.animated_preview_url.split('/')[1]);
     let dataUrl = `https://twitch-cors.herokuapp.com/https://${hostUrl}/${splitString}/${quality}/index-dvr.m3u8`;
 
     try {
       const checkIfVideoExists = await axios.head(`${dataUrl}`);
-      // console.log(checkIfVideoExists);
       if (checkIfVideoExists.status !== 403) {
         setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
       } else {

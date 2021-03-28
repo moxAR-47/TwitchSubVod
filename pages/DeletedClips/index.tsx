@@ -35,8 +35,6 @@ const DeletedClips: React.FC = () => {
     return +h * 3600 + +m * 60 + +s;
   };
 
-  // little hack here
-  // todo: find a way to check if any request is being processed
   if (loading) {
     setTimeout(() => {
       setLoading(false);
@@ -64,7 +62,6 @@ const DeletedClips: React.FC = () => {
       ) {
         setLoading(true);
         for (let i = startingSeconds; i < endingSeconds; i++) {
-          // there must be a lighter way to do this (instead of looping through every second)
           let url = `${process.env.NEXT_PUBLIC_CORS_WORKER}https://clips-media-assets2.twitch.tv/${vodId}-offset-${i}.mp4`;
           axios
             .head(`${url}`)
@@ -207,7 +204,6 @@ const DeletedClips: React.FC = () => {
         {noData && (
           <ErrorModal message="There are no clips in the specified time" />
         )}
-        {/* {data && console.log(data)} */}
       </AnimationContainer>
       <Footer />
     </Container>

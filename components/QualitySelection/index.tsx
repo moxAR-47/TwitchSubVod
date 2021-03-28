@@ -7,12 +7,7 @@ const QualitySelection = ({ ...rest }): any => {
   return (
     <Container>
       <label htmlFor="quality">Select a quality: </label>
-      <select
-        name="quality"
-        id="quality"
-        // onChange={(event) => setVodQuality(event.target.value)}
-        {...rest}
-      >
+      <select name="quality" id="quality" {...rest}>
         <option defaultValue="chunked">Source</option>
         <option value="720p60">720p60</option>
         <option value="720p30">720p30</option>

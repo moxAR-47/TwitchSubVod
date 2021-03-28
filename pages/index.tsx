@@ -56,7 +56,6 @@ const Home: React.FC = () => {
                 channelResponse.data.videos.length !== 0 &&
                   setTwitchData(channelResponse.data);
                 setLoading(false);
-                // console.log(channelResponse.data._total);
                 if (channelResponse.data._total === 0) {
                   setError(`${username} does not have any available streams`);
                   setLoading(false);
@@ -77,8 +76,6 @@ const Home: React.FC = () => {
         setLoading(false);
         setError('Something went wrong');
       }
-
-      // (quality || twitchData) && console.log(quality, twitchData);
     } else {
       setError('Enter a streamer username');
     }
