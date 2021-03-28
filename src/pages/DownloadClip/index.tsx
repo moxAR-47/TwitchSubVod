@@ -32,6 +32,7 @@ const DownloadClip: React.FC = () => {
 
   const [clip, setClip] = useState('');
   const [twitchData, setTwitchData] = useState<TwitchVideoProps>();
+  const [clipLink, setClipLink] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -46,6 +47,10 @@ const DownloadClip: React.FC = () => {
 
     try {
       const { data } = await api.get(`clips/${clipSlug(clip)}`);
+      const clipDownloadLink = data.thumbnails.medium.split('/')[3].split('-');
+      setClipLink(
+        `https://production.assets.clips.twitchcdn.net/${clipDownloadLink[0]}-offset-${clipDownloadLink[2]}.mp4`,
+      );
       setTwitchData(data);
       setLoading(false);
 
@@ -97,17 +102,13 @@ const DownloadClip: React.FC = () => {
             <strong>{twitchData.title}</strong>
             <div>
               <p>Views: {formatNumber(twitchData.views)}</p>
-              <a
-                href={`https://clips-media-assets2.twitch.tv/AT-cm%7C${twitchData.tracking_id}.mp4`}
-                rel="noopener noreferrer"
-              >
+              <a href={clipLink} rel="noopener noreferrer">
                 <FiDownload size={18} />
                 Download
               </a>
             </div>
           </Thumbnail>
         )}
-        {/* downloadlink = https://clips-media-assets2.twitch.tv/AT-cm%7C${tracking_id}.mp4 */}
       </AnimationContainer>
       <Footer />
     </Container>
