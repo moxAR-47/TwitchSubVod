@@ -1,8 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import api from '~/utils/services/api';
-import VodGallery from '~/components/VodGallery';
-import { Container } from '~/styles/Home';
-import LoadingModal from '~/components/LoadingModal';
+import api from '@/utils/services/api';
+import VodGallery from '@/components/VodGallery';
+import { Container } from '@/styles/Home';
+import LoadingModal from '@/components/LoadingModal';
 import streamersPaths from './data.json';
 
 interface TwitchVideoProps {

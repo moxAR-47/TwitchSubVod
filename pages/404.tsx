@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkBox from '~/components/LinkBox';
-import notFoundImage from '~/assets/not-found.svg';
+import LinkBox from '@/components/LinkBox';
+import notFoundImage from '@/assets/not-found.svg';
 
 export const Container = styled.div`
   display: flex;

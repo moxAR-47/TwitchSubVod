@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer correctly 1`] = `
+<div
+  className="styles__Container-w3v8va-0 fzYZxi"
+>
+  <a
+    href="https://ko-fi.com/pogulive"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="Buy Me a Coffee at ko-fi.com"
+      className="kofi-img"
+      src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+    />
+  </a>
+  <span>
+    This project is in no way affiliated with Twitch Interactive, Inc. Amazon.com, Inc., or any company mentioned on this page.
+    <a
+      href="https://github.com/Alissonsleal/TwitchSubVod"
+    >
+      View Source code
+    </a>
+  </span>
+</div>
+`;

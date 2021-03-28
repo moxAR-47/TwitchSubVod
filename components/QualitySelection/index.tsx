@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoModal from '~/components/InfoModal';
+import InfoModal from '@/components/InfoModal';
 
 import { Container } from './styles';
 

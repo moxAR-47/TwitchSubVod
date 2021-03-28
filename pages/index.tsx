@@ -3,15 +3,15 @@ import ReactGA from 'react-ga';
 
 import { FiSearch } from 'react-icons/fi';
 
-import api from '~/utils/services/api';
+import api from '@/utils/services/api';
 
-import { Container, AnimationContainer } from '~/styles/Home';
-import VodGallery from '~/components/VodGallery';
-import LinkBox from '~/components/LinkBox';
-import Footer from '~/components/Footer';
-import QualitySelection from '~/components/QualitySelection';
-import ErrorModal from '~/components/ErrorModal';
-import LoadingModal from '~/components/LoadingModal';
+import { Container, AnimationContainer } from '@/styles/Home';
+import VodGallery from '@/components/VodGallery';
+import LinkBox from '@/components/LinkBox';
+import Footer from '@/components/Footer';
+import QualitySelection from '@/components/QualitySelection';
+import ErrorModal from '@/components/ErrorModal';
+import LoadingModal from '@/components/LoadingModal';
 
 interface TwitchVideoProps {
   videos: Array<{

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { appearFromTop } from '~/utils/animations/appearFromTop';
+import { appearFromTop } from '@/utils/animations/appearFromTop';
 
 export const Container = styled.div`
   display: flex;

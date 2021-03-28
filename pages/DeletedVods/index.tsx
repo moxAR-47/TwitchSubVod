@@ -5,13 +5,13 @@ import ReactPlayer from 'react-player';
 
 import { FiSearch } from 'react-icons/fi';
 
-import { Container, AnimationContainer } from '~/styles/DeletedVods';
-import LinkBox from '~/components/LinkBox';
-import InfoModal from '~/components/InfoModal';
-import Footer from '~/components/Footer';
-import QualitySelection from '~/components/QualitySelection';
-import ErrorModal from '~/components/ErrorModal';
-import LoadingModal from '~/components/LoadingModal';
+import { Container, AnimationContainer } from '@/styles/DeletedVods';
+import LinkBox from '@/components/LinkBox';
+import InfoModal from '@/components/InfoModal';
+import Footer from '@/components/Footer';
+import QualitySelection from '@/components/QualitySelection';
+import ErrorModal from '@/components/ErrorModal';
+import LoadingModal from '@/components/LoadingModal';
 
 const DeletedVods: React.FC = () => {
   useEffect(() => {

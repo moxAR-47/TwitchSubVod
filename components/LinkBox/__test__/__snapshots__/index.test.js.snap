@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LinkBoxes correctly 1`] = `
+Array [
+  <div
+    className="styles__Container-cfnpnh-0 kuhPNu"
+  >
+    <span
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        fill="none"
+        height={14}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+      Home
+    </span>
+  </div>,
+  <div
+    className="styles__Container-cfnpnh-0 kuhPNu"
+  >
+    <span
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        fill="none"
+        height={14}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+      Search for deleted clips
+    </span>
+  </div>,
+  <div
+    className="styles__Container-cfnpnh-0 kuhPNu"
+  >
+    <span
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        fill="none"
+        height={14}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+      Search for deleted vods
+    </span>
+  </div>,
+  <div
+    className="styles__Container-cfnpnh-0 kuhPNu"
+  >
+    <span
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <svg
+        fill="none"
+        height={14}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={14}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+      Download Twitch Clips
+    </span>
+  </div>,
+]
+`;

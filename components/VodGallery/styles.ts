@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { appearFromTop } from '~/utils/animations/appearFromTop';
+import { appearFromTop } from '@/utils/animations/appearFromTop';
 
 interface AnimatedProps {
   url: string;

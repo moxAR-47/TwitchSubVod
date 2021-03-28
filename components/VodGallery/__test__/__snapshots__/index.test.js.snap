@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Vod Gallery correctly 1`] = `
+Array [
+  <h1>
+    Streamer: 
+    xQcOW
+  </h1>,
+  "",
+  <div
+    className="styles__Container-sc-1grrpo5-0 kedTVR"
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          <figure
+            className="styles__Image-sc-1grrpo5-1 cyWKhu"
+          >
+            <span>
+              17:30:43
+            </span>
+          </figure>
+        </div>
+        <strong>
+          [ NoPixel ] FROM 20K TO 100K OR BUST. BEST PLAYER WORLD OF ALL GAMES, BIG BIG.
+        </strong>
+        <p>
+          Views: 
+          3.2M
+        </p>
+      </button>
+    </div>
+    <div>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        <div>
+          <figure
+            className="styles__Image-sc-1grrpo5-1 fIvnvW"
+          >
+            <span>
+              15:08:36
+            </span>
+          </figure>
+        </div>
+        <strong>
+          [ NoPixel ] BIG DAY TODAY OMG! COURT CASE, CAZINO JUMP AND MORE WOW! WARLORD MOMENT INBOUND
+        </strong>
+        <p>
+          Views: 
+          2.8M
+        </p>
+      </button>
+    </div>
+  </div>,
+]
+`;

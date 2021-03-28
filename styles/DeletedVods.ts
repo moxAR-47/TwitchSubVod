@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { appearFromBottom } from '~/utils/animations/appearFromBottom';
-import { appearFromTop } from '~/utils/animations/appearFromTop';
+import { appearFromBottom } from '@/utils/animations/appearFromBottom';
+import { appearFromTop } from '@/utils/animations/appearFromTop';
 
 export const Container = styled.div`
   min-height: 100vh;

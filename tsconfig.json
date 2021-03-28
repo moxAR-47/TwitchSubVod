@@ -15,13 +15,13 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "~/pages/*": ["pages/*"],
-      "~/components/*": ["components/*"],
-      "~/styles/*": ["styles/*"],
-      "~/utils/*": ["utils/*"],
-      "~/assets/*": ["assets/*"]
+      "@/pages/*": ["pages/*"],
+      "@/components/*": ["components/*"],
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"],
+      "@/assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "index.d.ts"],
-  "exclude": ["node_modules", "**/**.styles.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "index.d.ts"],
+  "exclude": ["node_modules", ".next"]
 }

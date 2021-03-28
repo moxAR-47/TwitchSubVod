@@ -3,18 +3,18 @@ import ReactGA from 'react-ga';
 
 import { FiSearch, FiDownload } from 'react-icons/fi';
 
-import api from '~/utils/services/api';
+import api from '@/utils/services/api';
 
 import {
   Container,
   AnimationContainer,
   Thumbnail,
-} from '~/styles/DownloadClip';
-import LinkBox from '~/components/LinkBox';
-import Footer from '~/components/Footer';
-import { formatNumber } from '~/components/VodGallery';
-import LoadingModal from '~/components/LoadingModal';
-import ErrorModal from '~/components/ErrorModal';
+} from '@/styles/DownloadClip';
+import LinkBox from '@/components/LinkBox';
+import Footer from '@/components/Footer';
+import { formatNumber } from '@/components/VodGallery';
+import LoadingModal from '@/components/LoadingModal';
+import ErrorModal from '@/components/ErrorModal';
 
 interface TwitchVideoProps {
   slug: string;

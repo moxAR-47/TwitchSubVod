@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import ErrorModal from '~/components/ErrorModal';
+import ErrorModal from '@/components/ErrorModal';
 
-import VodModal from '~/components/VodModal';
+import VodModal from '@/components/VodModal';
 
 import { Container, Image } from './styles';
 

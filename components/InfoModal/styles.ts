@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { appearFromRight } from '~/utils/animations/appearFromRight';
+import { appearFromRight } from '@/utils/animations/appearFromRight';
 
 export const Container = styled.div`
   position: relative;
