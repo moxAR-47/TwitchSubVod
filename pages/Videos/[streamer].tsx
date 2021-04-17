@@ -4,6 +4,7 @@ import VodGallery from '@/components/VodGallery';
 import { Container } from '@/styles/Home';
 import LoadingModal from '@/components/LoadingModal';
 import streamersPaths from './data.json';
+import { useGlobal } from '@/stores/GlobalContext';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -68,6 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Videos = ({
   twitchData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { videoQuality } = useGlobal();
   const data: TwitchVideoProps = twitchData;
 
   if (!data) {
@@ -80,7 +82,7 @@ const Videos = ({
 
   return (
     <Container>
-      <VodGallery data={data.videos} quality={'chunked'} />
+      <VodGallery data={data.videos} quality={videoQuality} />
     </Container>
   );
 };

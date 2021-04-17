@@ -53,7 +53,8 @@
         ["@/styles", "./styles"],
         ["@/assets", "./assets"],
         ["@/utils", "./utils"],
-        [("@/utils/animations", "./utils/animations")]
+        ["@/stores", "./stores"],
+        ["@/utils/animations", "./utils/animations"]
       ]
     }
   }

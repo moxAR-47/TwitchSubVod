@@ -73,7 +73,8 @@
       "^@/styles(.*)$": "<rootDir>/styles$1",
       "^@/utils(.*)$": "<rootDir>/utils$1",
       "^@/utils/animations(.*)$": "<rootDir>/utils/animations$1",
-      "^@/assets(.*)$": "<rootDir>/assets$1"
+      "^@/assets(.*)$": "<rootDir>/assets$1",
+      "^@/stores(.*)$": "<rootDir>/stores$1"
     },
     "coverageDirectory": ".coverage",
     "clearMocks": true,

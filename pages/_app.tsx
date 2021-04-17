@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { GlobalProvider } from '@/stores/GlobalContext';
 import { darkTheme, lightTheme } from '@/components/themes';
 import GlobalStyle from '@/styles/GlobalStyle';
 
@@ -47,7 +48,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           </button>
         }
         <GlobalStyle />
-        <Component {...pageProps} />
+        <GlobalProvider>
+          <Component {...pageProps} />
+        </GlobalProvider>
       </ThemeProvider>
     </>
   );
