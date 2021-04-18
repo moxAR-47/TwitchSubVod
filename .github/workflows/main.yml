@@ -8,20 +8,17 @@ name: Tests
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Get master
-        run: git fetch origin master
       - name: Install dependencies
         run: yarn
-      - name: Install Jest globally
-        run: sudo yarn global add jest
       - name: Run Tests
         run: yarn coverage
-      - name: Check folder
-        run: ls
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
