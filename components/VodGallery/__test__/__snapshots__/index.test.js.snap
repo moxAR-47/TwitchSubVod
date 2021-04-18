@@ -7,9 +7,11 @@ Array [
     xQcOW
   </h1>,
   <div
-    className="styles__Container-sc-1grrpo5-0 kedTVR"
+    className="styles__Container-sc-1grrpo5-0 dmjRdy"
   >
-    <div>
+    <div
+      title="[ NoPixel ] FROM 20K TO 100K OR BUST. BEST PLAYER WORLD OF ALL GAMES, BIG BIG."
+    >
       <button
         onClick={[Function]}
         type="button"
@@ -26,13 +28,20 @@ Array [
         <strong>
           [ NoPixel ] FROM 20K TO 100K OR BUST. BEST PLAYER WORLD OF ALL GAMES, BIG BIG.
         </strong>
-        <p>
-          Views: 
-          3.2M
-        </p>
+        <span>
+          <p>
+            Views: 
+            3.2M
+          </p>
+          <p>
+            3/27/2021
+          </p>
+        </span>
       </button>
     </div>
-    <div>
+    <div
+      title="[ NoPixel ] BIG DAY TODAY OMG! COURT CASE, CAZINO JUMP AND MORE WOW! WARLORD MOMENT INBOUND"
+    >
       <button
         onClick={[Function]}
         type="button"
@@ -49,10 +58,15 @@ Array [
         <strong>
           [ NoPixel ] BIG DAY TODAY OMG! COURT CASE, CAZINO JUMP AND MORE WOW! WARLORD MOMENT INBOUND
         </strong>
-        <p>
-          Views: 
-          2.8M
-        </p>
+        <span>
+          <p>
+            Views: 
+            2.8M
+          </p>
+          <p>
+            3/26/2021
+          </p>
+        </span>
       </button>
     </div>
   </div>,

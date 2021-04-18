@@ -22,6 +22,7 @@ interface ResultProps {
   channel: {
     display_name: string;
   };
+  recorded_at: string;
 }
 
 export const formatNumber = (num: number) => {
@@ -90,8 +91,9 @@ const VodGallery = ({ data }: any) => {
 
       <Container>
         {data.map((result: ResultProps) => {
+          console.log(new Date(result.recorded_at).toLocaleDateString());
           return (
-            <div key={result._id}>
+            <div key={result._id} title={result.title}>
               <button type="button" onClick={() => handleVideo(result)}>
                 <div>
                   <Image
@@ -102,7 +104,10 @@ const VodGallery = ({ data }: any) => {
                   </Image>
                 </div>
                 <strong>{result.title}</strong>
-                <p>Views: {formatNumber(result.views)}</p>
+                <span>
+                  <p>Views: {formatNumber(result.views)}</p>
+                  <p>{new Date(result.recorded_at).toLocaleDateString()}</p>
+                </span>
               </button>
             </div>
           );

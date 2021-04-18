@@ -40,6 +40,17 @@ export const Container = styled.div`
           background: var(--purple);
         }
       }
+
+      > span {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        p {
+          margin: 0;
+          font-size: 0.75rem;
+          font-weight: normal;
+        }
+      }
     }
 
     strong {
@@ -48,12 +59,6 @@ export const Container = styled.div`
       font-size: 0.9rem;
       font-weight: bold;
       max-width: 100%;
-    }
-
-    p {
-      margin: 0;
-      font-size: 0.75rem;
-      font-weight: normal;
     }
   }
 
