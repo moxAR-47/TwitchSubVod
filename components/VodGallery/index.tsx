@@ -24,10 +24,6 @@ interface ResultProps {
   };
 }
 
-interface DataProps {
-  data: ResultProps[];
-}
-
 export const formatNumber = (num: number) => {
   if (num > 1000 && num < 1000000) {
     return (num / 1000).toString().slice(0, 3) + 'K';
@@ -38,7 +34,7 @@ export const formatNumber = (num: number) => {
   }
 };
 
-const VodGallery = ({ data }: DataProps) => {
+const VodGallery = ({ data }: any) => {
   const { vodUrl, setVodUrl, videoQuality } = useGlobal();
   useEffect(() => {
     ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
