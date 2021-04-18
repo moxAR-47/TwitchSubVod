@@ -89,6 +89,19 @@ const VodGallery = ({ data }: any) => {
         <ErrorModal message="We couldn't find this video, try changing the quality to 'Source'" />
       )}
 
+      <a
+        href="https://ko-fi.com/pogulive"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Help me keep the servers running
+        <img
+          className="kofi-img"
+          width="230px"
+          src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+          alt="Buy Me a Coffee at ko-fi.com"
+        />
+      </a>
       <Container>
         {data.map((result: ResultProps) => {
           console.log(new Date(result.recorded_at).toLocaleDateString());

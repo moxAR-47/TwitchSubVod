@@ -6,6 +6,19 @@ Array [
     Streamer: 
     xQcOW
   </h1>,
+  <a
+    href="https://ko-fi.com/pogulive"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    Help me keep the servers running
+    <img
+      alt="Buy Me a Coffee at ko-fi.com"
+      className="kofi-img"
+      src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+      width="230px"
+    />
+  </a>,
   <div
     className="styles__Container-sc-1grrpo5-0 dmjRdy"
   >
