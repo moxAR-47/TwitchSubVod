@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiSearch } from 'react-icons/fi';
+import { FiExternalLink, FiSearch } from 'react-icons/fi';
 import Link from 'next/link';
 
 import { Container } from './styles';
@@ -9,9 +9,41 @@ interface LinksProps {
   clips?: boolean;
   vods?: boolean;
   download?: boolean;
+  all?: boolean;
 }
 
-const LinkBox = ({ home, clips, vods, download }: LinksProps) => {
+const LinkBox = ({ home, clips, vods, download, all }: LinksProps) => {
+  if (all) {
+    return (
+      <Container>
+        <Link href="/" aria-label="Home">
+          <span>
+            Home
+            <FiExternalLink size={14} />
+          </span>
+        </Link>
+        <Link href="/deletedclips" aria-label="DeletedClips">
+          <span>
+            Search for Deleted Clips
+            <FiExternalLink size={14} />
+          </span>
+        </Link>
+        <Link href="/deletedvods" aria-label="DeletedVods">
+          <span>
+            Search for Deleted Vods
+            <FiExternalLink size={14} />
+          </span>
+        </Link>
+        <Link href="/downloadclip" aria-label="DownloadClip">
+          <span>
+            Download Twitch Clips
+            <FiExternalLink size={14} />
+          </span>
+        </Link>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       {home && (
@@ -24,7 +56,7 @@ const LinkBox = ({ home, clips, vods, download }: LinksProps) => {
       )}
 
       {clips && (
-        <Link href="/DeletedClips" aria-label="DeletedClips">
+        <Link href="/deletedclips" aria-label="DeletedClips">
           <span>
             <FiSearch size={14} />
             Search for deleted clips
@@ -33,7 +65,7 @@ const LinkBox = ({ home, clips, vods, download }: LinksProps) => {
       )}
 
       {vods && (
-        <Link href="/DeletedVods" aria-label="DeletedVods">
+        <Link href="/deletedvods" aria-label="DeletedVods">
           <span>
             <FiSearch size={14} />
             Search for deleted vods
@@ -42,7 +74,7 @@ const LinkBox = ({ home, clips, vods, download }: LinksProps) => {
       )}
 
       {download && (
-        <Link href="/DownloadClip" aria-label="DownloadClip">
+        <Link href="/downloadclip" aria-label="DownloadClip">
           <span>
             <FiSearch size={14} />
             Download Twitch Clips

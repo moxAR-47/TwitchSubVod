@@ -9,11 +9,17 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 
-    svg {
-      margin-right: 0.5rem;
+    & + span {
+      margin-top: 0.5rem;
     }
+
+    svg {
+      margin: 0 0.5rem 0 0.75rem;
+    }
+
     a {
       color: var(--text);
     }

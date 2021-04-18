@@ -5,6 +5,8 @@ import { Container } from '@/styles/Home';
 import LoadingModal from '@/components/LoadingModal';
 import streamersPaths from './data.json';
 import { useGlobal } from '@/stores/GlobalContext';
+import SearchInput from '@/components/SearchInput';
+import LinkBox from '@/components/LinkBox';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -76,12 +78,16 @@ const Videos = ({
     return (
       <Container>
         <LoadingModal />
+        <h1>loading</h1>
       </Container>
     );
   }
 
   return (
     <Container>
+      <h1>Twitch Sub Vod</h1>
+      <SearchInput />
+      <LinkBox all={true} />
       <VodGallery data={data.videos} quality={videoQuality} />
     </Container>
   );

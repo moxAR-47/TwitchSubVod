@@ -4,10 +4,13 @@ const GlobalContext = createContext({} as any);
 
 export function GlobalProvider({ children }: any) {
   const [videoQuality, setVideoQuality] = useState('chunked');
+  const [error, setError] = useState('');
 
   const value = {
     videoQuality,
     setVideoQuality,
+    error,
+    setError,
   };
 
   return (
