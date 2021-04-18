@@ -6,6 +6,41 @@ interface AnimatedProps {
   animated: any;
 }
 
+export const StreamerInformation = styled.div`
+  * {
+    margin: 0;
+  }
+
+  display: flex;
+  margin-top: 3rem;
+  max-width: 320px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  :hover {
+    color: var(--purple);
+
+    img {
+      border: 2px solid var(--purple);
+    }
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 2px solid var(--text);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+`;
+
 export const Container = styled.div`
   max-width: 60rem;
   display: flex;

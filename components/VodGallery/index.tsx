@@ -5,7 +5,8 @@ import ErrorModal from '@/components/ErrorModal';
 import { useGlobal } from '@/stores/GlobalContext';
 import VodModal from '@/components/VodModal';
 
-import { Container, Image } from './styles';
+import { StreamerInformation, Container, Image } from './styles';
+import Link from 'next/link';
 
 interface ResultProps {
   _id: string;
@@ -21,6 +22,9 @@ interface ResultProps {
   game: string;
   channel: {
     display_name: string;
+    logo: string;
+    description: string;
+    url: string;
   };
   recorded_at: string;
 }
@@ -37,6 +41,7 @@ export const formatNumber = (num: number) => {
 
 const VodGallery = ({ data }: any) => {
   const { vodUrl, setVodUrl, videoQuality } = useGlobal();
+  const streamerInformation: ResultProps['channel'] = data[0].channel;
   useEffect(() => {
     ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
@@ -61,7 +66,7 @@ const VodGallery = ({ data }: any) => {
       setError(true);
     }
 
-    window.scrollTo({ behavior: 'smooth', top: 300 });
+    window.scrollTo({ behavior: 'smooth', top: 340 });
 
     ReactGA.event({
       category: 'SearchedUserForDeletedVod',
@@ -77,10 +82,27 @@ const VodGallery = ({ data }: any) => {
 
     return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
   };
-
+  console.log(streamerInformation.display_name);
   return (
     <>
-      {data && !error && <h1>Streamer: {data[0].channel.display_name}</h1>}
+      {data && !error && (
+        <Link href={streamerInformation.url}>
+          <a target="_blank" rel="noopener noreferrer">
+            <StreamerInformation>
+              <div>
+                <img
+                  src={streamerInformation.logo.replace('300x300', '150x150')}
+                  alt={streamerInformation.display_name}
+                />
+              </div>
+              <div>
+                <h1>{streamerInformation.display_name}</h1>
+                <p>{streamerInformation.description}</p>
+              </div>
+            </StreamerInformation>
+          </a>
+        </Link>
+      )}
       {vodUrl && <VodModal videoUrl={vodUrl} />}
       {error && !vodUrl && videoQuality === 'chunked' && (
         <ErrorModal message="We couldn't find this video" />
@@ -104,7 +126,6 @@ const VodGallery = ({ data }: any) => {
       </a>
       <Container>
         {data.map((result: ResultProps) => {
-          console.log(new Date(result.recorded_at).toLocaleDateString());
           return (
             <div key={result._id} title={result.title}>
               <button type="button" onClick={() => handleVideo(result)}>

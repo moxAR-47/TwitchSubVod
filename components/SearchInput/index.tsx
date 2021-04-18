@@ -34,10 +34,13 @@ const SearchInput = (): any => {
               .get(`channels/${response.data.users[0]._id}/videos?limit=1`)
               .then((channelResponse: any) => {
                 if (channelResponse.data.videos.length !== 0) {
-                  router.push(`/videos/${username}`);
+                  router.push(`/videos/${username}`, undefined, {
+                    scroll: false,
+                  });
                   setLoading(false);
                   setVodUrl('');
                   inputRef.current?.blur();
+                  window.scrollTo({ behavior: 'smooth', top: 340 });
                 }
                 if (channelResponse.data._total === 0) {
                   setLoading(false);
