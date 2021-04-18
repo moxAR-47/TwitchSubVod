@@ -82,7 +82,6 @@ const VodGallery = ({ data }: any) => {
 
     return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
   };
-  console.log(streamerInformation.display_name);
   return (
     <>
       {data && !error && (
