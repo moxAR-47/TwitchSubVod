@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import QualitySelection from '@/components/QualitySelection';
+import SearchInput from '@/components/QualitySelection';
 
-it('should render Quality Selection correctly', () => {
-  const tree = renderer.create(<QualitySelection />).toJSON();
+it('should render Search Input correctly', () => {
+  const tree = renderer.create(<SearchInput />).toJSON();
   expect(tree).toMatchSnapshot();
 });
