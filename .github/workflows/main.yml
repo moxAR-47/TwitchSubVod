@@ -20,6 +20,8 @@ jobs:
         run: sudo yarn global add jest
       - name: Run Tests
         run: yarn coverage
+      - name: Check folder
+        run: ls
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
