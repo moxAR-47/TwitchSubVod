@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import ReactGA from 'react-ga';
 import { FiSearch } from 'react-icons/fi';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import api from '@/utils/services/api';
 import { useGlobal } from '@/stores/GlobalContext';
 import { Container } from './styles';
@@ -12,14 +11,13 @@ import LoadingModal from '../LoadingModal';
 
 const SearchInput = (): any => {
   const router = useRouter();
-  const linkRef = useRef(null);
-  const { setVideoQuality, error, setError } = useGlobal();
+  const { setVideoQuality, error, setError, loading, setLoading } = useGlobal();
   const [username, setUsername] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
     if (username) {
       setLoading(true);
+      router.prefetch(`/videos/${username}`);
       try {
         setError('');
         api.get(`users?login=${username}`).then((response) => {
@@ -28,8 +26,11 @@ const SearchInput = (): any => {
               .get(`channels/${response.data.users[0]._id}/videos?limit=1`)
               .then((channelResponse: any) => {
                 channelResponse.data.videos.length !== 0 &&
-                  router.push(`/videos/${username}`);
+                  router.push(`/videos/${username}`) &&
+                  setLoading(false) &&
+                  console.log('loading');
                 if (channelResponse.data._total === 0) {
+                  setLoading(false);
                   setError(`${username} does not have any available streams`);
                 }
               });
@@ -39,9 +40,8 @@ const SearchInput = (): any => {
               action: `${username}`,
             });
           } catch (err) {
-            setError('This user does not exist or is unavailable');
-          } finally {
             setLoading(false);
+            setError('This user does not exist or is unavailable');
           }
         });
       } catch (err) {
@@ -72,7 +72,7 @@ const SearchInput = (): any => {
       <QualitySelection
         onChange={(event: any) => setVideoQuality(event.target.value)}
       />
-      <button ref={linkRef} type="submit" aria-label="submit">
+      <button type="submit" aria-label="submit">
         <FiSearch size={14} />
         Search
       </button>

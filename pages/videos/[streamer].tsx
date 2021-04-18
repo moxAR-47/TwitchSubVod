@@ -78,7 +78,6 @@ const Videos = ({
     return (
       <Container>
         <LoadingModal />
-        <h1>loading</h1>
       </Container>
     );
   }
