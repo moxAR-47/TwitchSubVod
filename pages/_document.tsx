@@ -8,6 +8,7 @@ import Document, {
   Head,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { GA_TRACKING_ID } from '../utils/gtag';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -99,6 +100,18 @@ export default class MyDocument extends Document {
                     y.parentNode.insertBefore(t, y);
                   })(window, document, 'clarity', 'script', '52r5yg4cof');
 `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+          `,
             }}
           />
         </Head>
