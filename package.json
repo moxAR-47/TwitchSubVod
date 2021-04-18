@@ -25,7 +25,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "yarn jest --passWithNoTests"
+    "test": "yarn jest --passWithNoTests",
+    "test:dev": "yarn jest --watchAll"
   },
   "browserslist": {
     "production": [
