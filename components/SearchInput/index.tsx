@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { FiSearch } from 'react-icons/fi';
 import { useRouter } from 'next/router';
@@ -11,7 +11,15 @@ import LoadingModal from '../LoadingModal';
 
 const SearchInput = (): any => {
   const router = useRouter();
-  const { setVideoQuality, error, setError, loading, setLoading } = useGlobal();
+  const inputRef = useRef<any>();
+  const {
+    setVideoQuality,
+    error,
+    setError,
+    loading,
+    setLoading,
+    setVodUrl,
+  } = useGlobal();
   const [username, setUsername] = useState('');
 
   const handleSubmit = () => {
@@ -25,10 +33,12 @@ const SearchInput = (): any => {
             api
               .get(`channels/${response.data.users[0]._id}/videos?limit=1`)
               .then((channelResponse: any) => {
-                channelResponse.data.videos.length !== 0 &&
-                  router.push(`/videos/${username}`) &&
-                  setLoading(false) &&
-                  console.log('loading');
+                if (channelResponse.data.videos.length !== 0) {
+                  router.push(`/videos/${username}`);
+                  setLoading(false);
+                  setVodUrl('');
+                  inputRef.current?.blur();
+                }
                 if (channelResponse.data._total === 0) {
                   setLoading(false);
                   setError(`${username} does not have any available streams`);
@@ -62,6 +72,7 @@ const SearchInput = (): any => {
       }}
     >
       <input
+        ref={inputRef}
         type="text"
         name="username"
         aria-label="username"

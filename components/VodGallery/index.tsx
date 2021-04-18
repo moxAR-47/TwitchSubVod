@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import ReactGA from 'react-ga';
 import ErrorModal from '@/components/ErrorModal';
-
+import { useGlobal } from '@/stores/GlobalContext';
 import VodModal from '@/components/VodModal';
 
 import { Container, Image } from './styles';
@@ -24,6 +24,10 @@ interface ResultProps {
   };
 }
 
+interface DataProps {
+  data: ResultProps[];
+}
+
 export const formatNumber = (num: number) => {
   if (num > 1000 && num < 1000000) {
     return (num / 1000).toString().slice(0, 3) + 'K';
@@ -34,20 +38,20 @@ export const formatNumber = (num: number) => {
   }
 };
 
-const VodGallery = ({ data, quality }: any) => {
+const VodGallery = ({ data }: DataProps) => {
+  const { vodUrl, setVodUrl, videoQuality } = useGlobal();
   useEffect(() => {
     ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
     });
   }, []);
 
-  const [vodUrl, setVodUrl] = useState(''); //use useContext later to clear this when we search again
   const [error, setError] = useState(false);
 
   const handleVideo = async (result: any) => {
     const splitString = await result.animated_preview_url.split('/')[3];
     const hostUrl = await result.animated_preview_url.split('/')[2];
-    let dataUrl = `https://twitch-cors.herokuapp.com/https://${hostUrl}/${splitString}/${quality}/index-dvr.m3u8`;
+    let dataUrl = `${process.env.NEXT_PUBLIC_CORS}https://${hostUrl}/${splitString}/${videoQuality}/index-dvr.m3u8`;
 
     try {
       const checkIfVideoExists = await axios.head(`${dataUrl}`);
@@ -81,10 +85,10 @@ const VodGallery = ({ data, quality }: any) => {
     <>
       {data && !error && <h1>Streamer: {data[0].channel.display_name}</h1>}
       {vodUrl && <VodModal videoUrl={vodUrl} />}
-      {error && !vodUrl && quality === 'chunked' && (
+      {error && !vodUrl && videoQuality === 'chunked' && (
         <ErrorModal message="We couldn't find this video" />
       )}
-      {error && !vodUrl && quality !== 'chunked' && (
+      {error && !vodUrl && videoQuality !== 'chunked' && (
         <ErrorModal message="We couldn't find this video, try changing the quality to 'Source'" />
       )}
 

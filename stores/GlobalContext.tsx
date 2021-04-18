@@ -6,6 +6,7 @@ export function GlobalProvider({ children }: any) {
   const [videoQuality, setVideoQuality] = useState('chunked');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [vodUrl, setVodUrl] = useState('');
 
   const value = {
     videoQuality,
@@ -14,6 +15,8 @@ export function GlobalProvider({ children }: any) {
     setError,
     loading,
     setLoading,
+    vodUrl,
+    setVodUrl,
   };
 
   return (
