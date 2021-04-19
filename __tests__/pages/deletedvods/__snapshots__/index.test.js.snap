@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Deleted Vods correctly 1`] = `
+<div>
+  <div
+    class="DeletedVods__Container-lbpcr0-0 jJCtcX"
+  >
+    <div
+      class="DeletedVods__AnimationContainer-lbpcr0-1 caWxQA"
+    >
+      <h1>
+        Deleted Twitch Vods
+      </h1>
+      <form>
+        <div
+          class="input-box"
+        >
+          <input
+            name="vodId"
+            placeholder="Vod ID"
+            type="number"
+            value=""
+          />
+          <div
+            class="styles__Container-pgyzn6-0 iSQhKg"
+          >
+            <div
+              class="info-box"
+            >
+              <p>
+                You can get the Vod Id from
+                <a
+                  href="https://twitchtracker.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  twitchtracker.com
+                </a>
+              </p>
+            </div>
+            <svg
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <line
+                x1="12"
+                x2="12"
+                y1="16"
+                y2="12"
+              />
+              <line
+                x1="12"
+                x2="12.01"
+                y1="8"
+                y2="8"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="styles__Container-ezdgk0-0 eWRZyP"
+        >
+          <label
+            for="quality"
+          >
+            Select a quality: 
+          </label>
+          <select
+            id="quality"
+            name="quality"
+          >
+            <option>
+              Source
+            </option>
+            <option
+              value="720p60"
+            >
+              720p60
+            </option>
+            <option
+              value="720p30"
+            >
+              720p30
+            </option>
+            <option
+              value="480p30"
+            >
+              480p
+            </option>
+            <option
+              value="360p30"
+            >
+              360p
+            </option>
+            <option
+              value="160p30"
+            >
+              160p
+            </option>
+            <option
+              value="audio_only"
+            >
+              audio
+            </option>
+          </select>
+          <div
+            class="styles__Container-pgyzn6-0 iSQhKg"
+          >
+            <div
+              class="info-box"
+            >
+              <p>
+                Works best with "Source"
+              </p>
+            </div>
+            <svg
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <line
+                x1="12"
+                x2="12"
+                y1="16"
+                y2="12"
+              />
+              <line
+                x1="12"
+                x2="12.01"
+                y1="8"
+                y2="8"
+              />
+            </svg>
+          </div>
+        </div>
+        <button
+          aria-label="submit"
+          type="submit"
+        >
+          <svg
+            fill="none"
+            height="14"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
+            />
+            <line
+              x1="21"
+              x2="16.65"
+              y1="21"
+              y2="16.65"
+            />
+          </svg>
+          Search
+        </button>
+      </form>
+      <div
+        class="styles__Container-cfnpnh-0 iVQCyu"
+      >
+        <span>
+          <svg
+            fill="none"
+            height="14"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
+            />
+            <line
+              x1="21"
+              x2="16.65"
+              y1="21"
+              y2="16.65"
+            />
+          </svg>
+          Home
+        </span>
+      </div>
+    </div>
+    <div
+      class="styles__Container-w3v8va-0 jGGVKI"
+    >
+      <a
+        href="https://ko-fi.com/pogulive"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Buy Me a Coffee at ko-fi.com"
+          class="kofi-img"
+          src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+        />
+      </a>
+      <a
+        href="https://twitter.com/pogulive"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="twitter logo"
+          src="https://abs.twimg.com/favicons/twitter.ico"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;

@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^7.1.2",
     "@types/gtag.js": "^0.0.4",
     "@types/jest": "^26.0.22",

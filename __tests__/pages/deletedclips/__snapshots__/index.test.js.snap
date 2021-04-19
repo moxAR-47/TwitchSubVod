@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Deleted Clips correctly 1`] = `
+<div>
+  <div
+    class="DeletedClips__Container-sc-18jbdtp-0 bhotBv"
+  >
+    <div
+      class="DeletedClips__AnimationContainer-sc-18jbdtp-1 hiaomV"
+    >
+      <h1>
+        Deleted Twitch Clips
+      </h1>
+      <form>
+        <div
+          class="input-box"
+        >
+          <input
+            name="vodId"
+            placeholder="Vod ID"
+            type="number"
+            value=""
+          />
+          <div
+            class="styles__Container-pgyzn6-0 iSQhKg"
+          >
+            <div
+              class="info-box"
+            >
+              <p>
+                You can get the Vod Id from
+                <a
+                  href="https://twitchtracker.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  twitchtracker.com
+                </a>
+              </p>
+            </div>
+            <svg
+              fill="none"
+              height="18"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <line
+                x1="12"
+                x2="12"
+                y1="16"
+                y2="12"
+              />
+              <line
+                x1="12"
+                x2="12.01"
+                y1="8"
+                y2="8"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="time-container"
+        >
+          <div
+            class="starting-time"
+          >
+            <input
+              min="0"
+              name="Starting Point H"
+              placeholder="h"
+              type="number"
+              value=""
+            />
+            <input
+              aria-label="startingM"
+              max="59"
+              min="0"
+              name="Starting Point M"
+              placeholder="m"
+              type="number"
+              value=""
+            />
+            <input
+              max="59"
+              min="0"
+              name="Starting Point S"
+              placeholder="s"
+              type="number"
+              value=""
+            />
+          </div>
+          <p>
+            to
+          </p>
+          <div
+            class="ending-time"
+          >
+            <input
+              min="0"
+              name="Ending Point H"
+              placeholder="h"
+              type="number"
+              value=""
+            />
+            <input
+              aria-label="endingM"
+              max="59"
+              min="0"
+              name="Ending Point M"
+              placeholder="m"
+              type="number"
+              value=""
+            />
+            <input
+              max="59"
+              min="0"
+              name="Ending Point S"
+              placeholder="s"
+              type="number"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          aria-label="submit"
+          type="submit"
+        >
+          <svg
+            fill="none"
+            height="14"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
+            />
+            <line
+              x1="21"
+              x2="16.65"
+              y1="21"
+              y2="16.65"
+            />
+          </svg>
+          Search
+        </button>
+      </form>
+      <div
+        class="styles__Container-cfnpnh-0 iVQCyu"
+      >
+        <span>
+          <svg
+            fill="none"
+            height="14"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
+            />
+            <line
+              x1="21"
+              x2="16.65"
+              y1="21"
+              y2="16.65"
+            />
+          </svg>
+          Home
+        </span>
+      </div>
+      <div
+        class="video-container"
+      >
+        <div
+          style="width: 100%; height: 100%;"
+        />
+      </div>
+    </div>
+    <div
+      class="styles__Container-w3v8va-0 jGGVKI"
+    >
+      <a
+        href="https://ko-fi.com/pogulive"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Buy Me a Coffee at ko-fi.com"
+          class="kofi-img"
+          src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+        />
+      </a>
+      <a
+        href="https://twitter.com/pogulive"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="twitter logo"
+          src="https://abs.twimg.com/favicons/twitter.ico"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;
