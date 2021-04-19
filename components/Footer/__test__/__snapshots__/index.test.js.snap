@@ -2,7 +2,7 @@
 
 exports[`should render Footer correctly 1`] = `
 <div
-  className="styles__Container-w3v8va-0 fzYZxi"
+  className="styles__Container-w3v8va-0 jGGVKI"
 >
   <a
     href="https://ko-fi.com/pogulive"
@@ -15,13 +15,15 @@ exports[`should render Footer correctly 1`] = `
       src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
     />
   </a>
-  <span>
-    This project is in no way affiliated with Twitch Interactive, Inc. Amazon.com, Inc., or any company mentioned on this page.
-    <a
-      href="https://github.com/Alissonsleal/TwitchSubVod"
-    >
-      View Source code
-    </a>
-  </span>
+  <a
+    href="https://twitter.com/pogulive"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="twitter logo"
+      src="https://abs.twimg.com/favicons/twitter.ico"
+    />
+  </a>
 </div>
 `;

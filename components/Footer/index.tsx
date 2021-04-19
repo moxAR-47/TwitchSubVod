@@ -16,13 +16,16 @@ const Footer: React.FC = () => {
           alt="Buy Me a Coffee at ko-fi.com"
         />
       </a>
-      <span>
-        This project is in no way affiliated with Twitch Interactive, Inc.
-        Amazon.com, Inc., or any company mentioned on this page.
-        <a href="https://github.com/Alissonsleal/TwitchSubVod">
-          View Source code
-        </a>
-      </span>
+      <a
+        href="https://twitter.com/pogulive"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://abs.twimg.com/favicons/twitter.ico"
+          alt="twitter logo"
+        />
+      </a>
     </Container>
   );
 };

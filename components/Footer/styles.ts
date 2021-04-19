@@ -25,14 +25,6 @@ export const Container = styled.div`
   span {
     position: relative;
     display: flex;
-    visibility: hidden;
     padding: 1rem;
-  }
-
-  &:hover {
-    span {
-      animation: all 0.2s linear;
-      visibility: visible;
-    }
   }
 `;

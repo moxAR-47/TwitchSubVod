@@ -16,6 +16,17 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 30px;
+    }
+  }
 `;
 
 export const AnimationContainer = styled.div`

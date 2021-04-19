@@ -47,12 +47,25 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#181a1b" />
           <meta
             name="description"
-            content="Watch any deleted clip or deleted vod on Twitch for free. It also works with sub-only vods. Just insert the streamer username and select a video to watch. You can also download Twitch Clips with this application."
+            content="Watch any sub-only Twitch VOD for free. You can also find deleted clips or Twitch VODS. Just insert the streamer username and select a video to watch. You can also download Twitch Clips with this application."
           />
           <meta
             name="keywords"
             content="Twitch, Deleted Vod, Deleted Vods, Sub-only, Sub-only Vods, Watch Twitch, Twitch Free Vods, Twitch Deleted Vods, Twitch Deleted Clips, Twitch Download Clips, Twitch Clips"
           />
+          <meta property="og:title" content={`PogU.live - Sub-only VODS`} />
+          <meta property="og:url" content={`https://pogu.live`} />
+          <meta
+            property="og:image"
+            content="https://pogu.live/android-chrome-192x192.png"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:description"
+            content={`Watch any sub-only Twitch VOD for free. You can also find deleted clips or Twitch VODS. Just insert the streamer username and select a video to watch. You can also download Twitch Clips with this application.`}
+          />
+          <meta name="twitter:site" content="@pogulive" />
+
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
@@ -118,6 +131,19 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              kofiWidgetOverlay.draw('pogulive', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.background-color': '#9147ff',
+                'floating-chat.donateButton.text-color': '#f1f1f1'
+              });
+  `,
+            }}
+          />
         </body>
       </Html>
     );

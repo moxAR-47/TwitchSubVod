@@ -1,12 +1,14 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import api from '@/utils/services/api';
 import VodGallery from '@/components/VodGallery';
-import { Container } from '@/styles/Home';
 import LoadingModal from '@/components/LoadingModal';
+import SearchInput from '@/components/SearchInput';
+import Footer from '@/components/Footer';
+import LinkBox from '@/components/LinkBox';
 import streamersPaths from './data.json';
 import { useGlobal } from '@/stores/GlobalContext';
-import SearchInput from '@/components/SearchInput';
-import LinkBox from '@/components/LinkBox';
+import { Container } from '@/styles/Home';
 
 interface TwitchVideoProps {
   videos: Array<{
@@ -82,13 +84,42 @@ const Videos = ({
     );
   }
 
+  const streamerName = data.videos[0].channel.display_name;
+
+  const getOGUrl = () => {
+    const image = `https://og-image.vercel.app/${streamerName}%20%7C%20Sub-only%20vods%20%7C%20**PogU.live**.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-white.svg&images=https%3A%2F%2Fpogu.live%2Fandroid-chrome-192x192.png&images=${encodeURI(
+      data.videos[0].channel.logo,
+    )}&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg&widths=1&widths=300&widths=300&widths=1&heights=1&heights=300&heights=300&heights=1`;
+    return image;
+  };
+
   return (
-    <Container>
-      <h1>Twitch Sub Vod</h1>
-      <SearchInput />
-      <LinkBox all={true} />
-      <VodGallery data={data.videos} quality={videoQuality} />
-    </Container>
+    <>
+      <Head>
+        <title>{`${streamerName} - PogU`}</title>
+        <meta property="og:title" content={`${streamerName} - Sub-only VODS`} />
+        <meta
+          property="og:url"
+          content={`https://pogu.live/videos/${streamerName}`}
+        />
+        <meta property="og:image" content={getOGUrl()} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content={`Watch ${streamerName}'s sub-only Twitch VOD for free. PogU`}
+        />
+      </Head>
+      <Container>
+        <span>
+          <img src="/favicon.ico" alt="PogU.live" />
+          <h1>PogU</h1>
+        </span>
+        <SearchInput />
+        <LinkBox all={true} />
+        <VodGallery data={data.videos} quality={videoQuality} />
+        <Footer />
+      </Container>
+    </>
   );
 };
 

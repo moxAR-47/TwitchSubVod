@@ -88,7 +88,7 @@ const VodGallery = ({ data }: any) => {
         <Link href={streamerInformation.url}>
           <a target="_blank" rel="noopener noreferrer">
             <StreamerInformation>
-              <div>
+              <div title={streamerInformation.description}>
                 <img
                   src={streamerInformation.logo.replace('300x300', '150x150')}
                   alt={streamerInformation.display_name}
@@ -102,7 +102,24 @@ const VodGallery = ({ data }: any) => {
           </a>
         </Link>
       )}
-      {vodUrl && <VodModal videoUrl={vodUrl} />}
+      {vodUrl && (
+        <>
+          <VodModal videoUrl={vodUrl} />
+          <a
+            href="https://ko-fi.com/pogulive"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Help me keep the servers running
+            <img
+              className="kofi-img"
+              width="230px"
+              src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+              alt="Buy Me a Coffee at ko-fi.com"
+            />
+          </a>
+        </>
+      )}
       {error && !vodUrl && videoQuality === 'chunked' && (
         <ErrorModal message="We couldn't find this video" />
       )}
@@ -110,19 +127,6 @@ const VodGallery = ({ data }: any) => {
         <ErrorModal message="We couldn't find this video, try changing the quality to 'Source'" />
       )}
 
-      <a
-        href="https://ko-fi.com/pogulive"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Help me keep the servers running
-        <img
-          className="kofi-img"
-          width="230px"
-          src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
-          alt="Buy Me a Coffee at ko-fi.com"
-        />
-      </a>
       <Container>
         {data.map((result: ResultProps) => {
           return (
