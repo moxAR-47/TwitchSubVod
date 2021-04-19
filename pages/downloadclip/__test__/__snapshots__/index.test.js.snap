@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Download Clips correctly 1`] = `
+<div
+  className="DownloadClip__Container-sc-1lslxgi-0 cgprHQ"
+>
+  <div
+    className="DownloadClip__AnimationContainer-sc-1lslxgi-1 ffqmEF"
+  >
+    <h1>
+      Twitch Clip Downloader
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="DownloadClipInput"
+        name="clip"
+        onChange={[Function]}
+        placeholder="https://clips.twitch.tv/CarefulNiceJaguarRickroll"
+        type="text"
+        value=""
+      />
+      <button
+        aria-label="submit"
+        onClick={[Function]}
+        type="submit"
+      >
+        <svg
+          fill="none"
+          height={14}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={14}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        Download Clip
+      </button>
+    </form>
+    <div
+      className="styles__Container-cfnpnh-0 iVQCyu"
+    >
+      <span
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <svg
+          fill="none"
+          height={14}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={14}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        Home
+      </span>
+    </div>
+    <div
+      className="styles__Container-cfnpnh-0 iVQCyu"
+    >
+      <span
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <svg
+          fill="none"
+          height={14}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={14}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        Search for deleted clips
+      </span>
+    </div>
+    <div
+      className="styles__Container-cfnpnh-0 iVQCyu"
+    >
+      <span
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <svg
+          fill="none"
+          height={14}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={14}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        Search for deleted vods
+      </span>
+    </div>
+    
+  </div>
+  <div
+    className="styles__Container-w3v8va-0 jGGVKI"
+  >
+    <a
+      href="https://ko-fi.com/pogulive"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="Buy Me a Coffee at ko-fi.com"
+        className="kofi-img"
+        src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+      />
+    </a>
+    <a
+      href="https://twitter.com/pogulive"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        alt="twitter logo"
+        src="https://abs.twimg.com/favicons/twitter.ico"
+      />
+    </a>
+  </div>
+</div>
+`;

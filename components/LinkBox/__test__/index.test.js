@@ -9,6 +9,7 @@ it('should render LinkBoxes correctly', () => {
         <LinkBox clips />
         <LinkBox vods />
         <LinkBox download />
+        <LinkBox all />
       </>,
     )
     .toJSON();
