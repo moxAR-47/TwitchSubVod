@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Quality Selection correctly 1`] = `
+<div
+  className="styles__Container-ezdgk0-0 eWRZyP"
+>
+  <label
+    htmlFor="quality"
+  >
+    Select a quality: 
+  </label>
+  <select
+    id="quality"
+    name="quality"
+  >
+    <option
+      defaultValue="chunked"
+    >
+      Source
+    </option>
+    <option
+      value="720p60"
+    >
+      720p60
+    </option>
+    <option
+      value="720p30"
+    >
+      720p30
+    </option>
+    <option
+      value="480p30"
+    >
+      480p
+    </option>
+    <option
+      value="360p30"
+    >
+      360p
+    </option>
+    <option
+      value="160p30"
+    >
+      160p
+    </option>
+    <option
+      value="audio_only"
+    >
+      audio
+    </option>
+  </select>
+  <div
+    className="styles__Container-pgyzn6-0 iSQhKg"
+  >
+    <div
+      className="info-box"
+    >
+      <p>
+        Works best with "Source"
+      </p>
+    </div>
+    <svg
+      fill="none"
+      height={18}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 24 24"
+      width={18}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <line
+        x1="12"
+        x2="12"
+        y1="16"
+        y2="12"
+      />
+      <line
+        x1="12"
+        x2="12.01"
+        y1="8"
+        y2="8"
+      />
+    </svg>
+  </div>
+</div>
+`;

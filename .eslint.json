@@ -46,7 +46,16 @@
   },
   "settings": {
     "import/resolver": {
-      "typescript": {}
+      "typescript": {},
+      "alias": [
+        ["@/components", "./components"],
+        ["@/pages", "./pages"],
+        ["@/styles", "./styles"],
+        ["@/assets", "./assets"],
+        ["@/utils", "./utils"],
+        ["@/stores", "./stores"],
+        ["@/utils/animations", "./utils/animations"]
+      ]
     }
   }
 }

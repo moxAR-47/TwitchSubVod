@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer correctly 1`] = `
+<div
+  className="styles__Container-w3v8va-0 jGGVKI"
+>
+  <a
+    href="https://ko-fi.com/pogulive"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="Buy Me a Coffee at ko-fi.com"
+      className="kofi-img"
+      src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+    />
+  </a>
+  <a
+    href="https://twitter.com/pogulive"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <img
+      alt="twitter logo"
+      src="https://abs.twimg.com/favicons/twitter.ico"
+    />
+  </a>
+</div>
+`;
