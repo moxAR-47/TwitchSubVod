@@ -88,7 +88,6 @@ const VodGallery = ({ data }: any) => {
     return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
   };
 
-  data[0].channel._id;
   const handlePagination = useCallback(
     ({ next }) => {
       try {
