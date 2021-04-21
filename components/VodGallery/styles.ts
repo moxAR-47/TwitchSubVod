@@ -55,7 +55,11 @@ export const Container = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 
-  div {
+  .ad {
+    width: 100%;
+  }
+
+  div.stream {
     max-width: 19rem;
     margin: 0.5rem;
     display: flex;
@@ -107,6 +111,35 @@ export const Container = styled.div`
 
   div & {
     padding: 1rem 0;
+  }
+
+  .pagination-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    button {
+      color: #fafafa;
+      background: var(--purple);
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      transition: background 0.2s ease;
+      margin-bottom: 3rem;
+
+      & + button {
+        margin-left: 1rem;
+      }
+
+      :hover {
+        background: var(--dark-purple);
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        min-height: 4rem;
+      }
+    }
   }
 `;
 

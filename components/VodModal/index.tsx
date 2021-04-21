@@ -1,28 +1,42 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ReactPlayer from 'react-player';
 
-import { Container } from './styles';
+import { Container, Ads } from './styles';
 
 const VodModal = ({ videoUrl }: any) => {
-  return (
-    <Container>
-      <ReactPlayer
-        url={videoUrl}
-        controls
-        width="100%"
-        height="100%"
-        config={{
-          file: {
-            hlsOptions: {
-              xhrSetup: (xhr: any, _url: any) => {
-                xhr.open('GET', _url.replace('unmuted.ts', 'muted.ts'), true);
+  const [showAd, setShowAd] = useState(true);
+  useEffect(() => {
+    setShowAd(true);
+  }, [videoUrl]);
+
+  const renderVodModal = useMemo(() => {
+    return (
+      <>
+        <Ads isVisible={showAd}>
+          <div id="container-7a1cea35756a114959dfd0d55a4bfc2c"></div>
+          <button onClick={() => setShowAd(false)}>Close Ads</button>
+        </Ads>
+
+        <ReactPlayer
+          url={videoUrl}
+          controls
+          width="100%"
+          height="100%"
+          config={{
+            file: {
+              hlsOptions: {
+                xhrSetup: (xhr: any, _url: any) => {
+                  xhr.open('GET', _url.replace('unmuted.ts', 'muted.ts'), true);
+                },
               },
             },
-          },
-        }}
-      />
-    </Container>
-  );
+          }}
+        />
+      </>
+    );
+  }, [videoUrl, showAd, setShowAd]);
+
+  return <Container>{renderVodModal}</Container>;
 };
 
 export default VodModal;
