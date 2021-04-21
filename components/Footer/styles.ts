@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: sticky;
   top: 100%;
   padding: 1rem;
+  margin-bottom: 5rem;
 
   animation: ${appearFromTop} 0.5s ease-in;
 

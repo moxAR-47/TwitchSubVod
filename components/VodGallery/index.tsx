@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import ReactGA from 'react-ga';
 import ErrorModal from '@/components/ErrorModal';
@@ -7,6 +7,7 @@ import VodModal from '@/components/VodModal';
 
 import { StreamerInformation, Container, Image } from './styles';
 import Link from 'next/link';
+import api from '@/utils/services/api';
 
 interface ResultProps {
   _id: string;
@@ -40,8 +41,12 @@ export const formatNumber = (num: number) => {
 };
 
 const VodGallery = ({ data }: any) => {
+  const [videos, setVideos] = useState(data);
   const { vodUrl, setVodUrl, videoQuality } = useGlobal();
   const streamerInformation: ResultProps['channel'] = data[0].channel;
+  const [offset, setOffset] = useState(0);
+  const [totalVideos, setTotalVideos] = useState(50);
+  data[0].channel._id !== videos[0].channel._id && setVideos(data);
   useEffect(() => {
     ReactGA.initialize(`${process.env.NEXT_PUBLIC_GOOGLE_TRACKING}`, {
       testMode: process.env.NODE_ENV === 'test',
@@ -82,6 +87,64 @@ const VodGallery = ({ data }: any) => {
 
     return `${h}:${m > 10 ? m : '0' + m}:${s > 10 ? s : '0' + s}`;
   };
+
+  const handlePagination = useCallback(
+    ({ next }) => {
+      setError(false);
+      api
+        .get(
+          `channels/${data[0].channel._id}/videos?limit=6&offset=${
+            next ? offset + 6 : offset - 6
+          }`,
+        )
+        .then((channelResponse: any) => {
+          if (channelResponse.data.videos.length !== 0) {
+            setTotalVideos(channelResponse.data._total);
+            setVideos(channelResponse.data.videos);
+            next ? setOffset(offset + 6) : setOffset(offset - 6);
+            window.scrollTo({ behavior: 'smooth', top: 340 });
+          }
+        })
+        .catch(() => setError(true));
+    },
+    [offset, data],
+  );
+
+  const renderVideos = useMemo(() => {
+    return videos.map((result: ResultProps) => {
+      return (
+        <div key={result._id} title={result.title} className="stream">
+          <button type="button" onClick={() => handleVideo(result)}>
+            <div>
+              <Image
+                url={result.preview.large}
+                animated={result.animated_preview_url}
+              >
+                <span>{timeToHMS(result.length)}</span>
+              </Image>
+            </div>
+            <strong>{result.title}</strong>
+            <span>
+              <p>Views: {formatNumber(result.views)}</p>
+              <p>{new Date(result.recorded_at).toLocaleDateString()}</p>
+            </span>
+          </button>
+        </div>
+      );
+    });
+  }, [videos]);
+
+  const renderAds = useMemo(() => {
+    return (
+      videos && (
+        <div
+          id="container-94a48b4186ad12774b4b3f215a3ae716"
+          className="ad"
+        ></div>
+      )
+    );
+  }, [videos]);
+
   return (
     <>
       {data && !error && (
@@ -128,27 +191,28 @@ const VodGallery = ({ data }: any) => {
       )}
 
       <Container>
-        {data.map((result: ResultProps) => {
-          return (
-            <div key={result._id} title={result.title}>
-              <button type="button" onClick={() => handleVideo(result)}>
-                <div>
-                  <Image
-                    url={result.preview.large}
-                    animated={result.animated_preview_url}
-                  >
-                    <span>{timeToHMS(result.length)}</span>
-                  </Image>
-                </div>
-                <strong>{result.title}</strong>
-                <span>
-                  <p>Views: {formatNumber(result.views)}</p>
-                  <p>{new Date(result.recorded_at).toLocaleDateString()}</p>
-                </span>
-              </button>
-            </div>
-          );
-        })}
+        {renderVideos}
+        <div className="pagination-button-container">
+          {offset > 0 && (
+            <button
+              className="pagination-button"
+              type="button"
+              onClick={() => handlePagination({ next: false })}
+            >
+              previous page
+            </button>
+          )}
+          {offset + 6 < totalVideos && (
+            <button
+              className="pagination-button"
+              type="button"
+              onClick={() => handlePagination({ next: true })}
+            >
+              next page
+            </button>
+          )}
+        </div>
+        {renderAds}
       </Container>
     </>
   );

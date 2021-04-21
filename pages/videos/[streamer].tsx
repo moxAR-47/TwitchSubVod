@@ -14,6 +14,7 @@ interface TwitchVideoProps {
   videos: Array<{
     broadcast_id: number;
     channel: {
+      _id: number;
       display_name: string;
       description: string;
       followers: number;
@@ -45,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .then(async (response) => {
       try {
         return await api
-          .get(`channels/${response.data.users[0]._id}/videos?limit=100`)
+          .get(`channels/${response.data.users[0]._id}/videos?limit=6`)
           .then((channelResponse: any) => {
             if (channelResponse.data.videos.length !== 0)
               return channelResponse.data;
