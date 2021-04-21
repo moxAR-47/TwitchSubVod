@@ -90,24 +90,22 @@ const VodGallery = ({ data }: any) => {
 
   const handlePagination = useCallback(
     ({ next }) => {
-      try {
-        api
-          .get(
-            `channels/${data[0].channel._id}/videos?limit=6&offset=${
-              next ? offset + 6 : offset - 6
-            }`,
-          )
-          .then((channelResponse: any) => {
-            if (channelResponse.data.videos.length !== 0) {
-              setTotalVideos(channelResponse.data._total);
-              setVideos(channelResponse.data.videos);
-              next ? setOffset(offset + 6) : setOffset(offset - 6);
-              window.scrollTo({ behavior: 'smooth', top: 340 });
-            }
-          });
-      } catch {
-        setError(true);
-      }
+      setError(false);
+      api
+        .get(
+          `channels/${data[0].channel._id}/videos?limit=6&offset=${
+            next ? offset + 6 : offset - 6
+          }`,
+        )
+        .then((channelResponse: any) => {
+          if (channelResponse.data.videos.length !== 0) {
+            setTotalVideos(channelResponse.data._total);
+            setVideos(channelResponse.data.videos);
+            next ? setOffset(offset + 6) : setOffset(offset - 6);
+            window.scrollTo({ behavior: 'smooth', top: 340 });
+          }
+        })
+        .catch(() => setError(true));
     },
     [offset, data],
   );
