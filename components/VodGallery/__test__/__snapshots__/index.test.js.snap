@@ -106,10 +106,6 @@ Array [
         next page
       </button>
     </div>
-    <div
-      className="ad"
-      id="container-94a48b4186ad12774b4b3f215a3ae716"
-    />
   </div>,
 ]
 `;

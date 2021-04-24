@@ -138,20 +138,10 @@ export default class MyDocument extends Document {
   `,
             }}
           />
-          <script
-            async={true}
-            data-cfasync="false"
-            src="//pl16235554.performancetrustednetwork.com/94a48b4186ad12774b4b3f215a3ae716/invoke.js"
-          ></script>
-          <script
-            async={true}
-            data-cfasync="false"
-            src="//pl16235704.performancetrustednetwork.com/7a1cea35756a114959dfd0d55a4bfc2c/invoke.js"
-          ></script>
-          <script
-            type="text/javascript"
-            src="//pl16235628.performancetrustednetwork.com/59/11/97/5911973f8601b69a1878d97badc11fc4.js"
-          ></script>
+          <meta
+            name="hilltopads-site-verification"
+            content="8f73c806452d052993daa88b6da499af8b51088f"
+          />
         </body>
       </Html>
     );

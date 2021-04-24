@@ -5,18 +5,6 @@ exports[`should render Vod Modal correctly 1`] = `
   className="styles__Container-xygqpp-0 hhwJGI"
 >
   <div
-    className="styles__Ads-xygqpp-1 feibhn"
-  >
-    <div
-      id="container-7a1cea35756a114959dfd0d55a4bfc2c"
-    />
-    <button
-      onClick={[Function]}
-    >
-      Close Ads
-    </button>
-  </div>
-  <div
     style={
       Object {
         "height": "100%",

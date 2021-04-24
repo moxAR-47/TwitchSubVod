@@ -212,7 +212,7 @@ const VodGallery = ({ data }: any) => {
             </button>
           )}
         </div>
-        {renderAds}
+        {/* {renderAds} */}
       </Container>
     </>
   );

@@ -12,10 +12,10 @@ const VodModal = ({ videoUrl }: any) => {
   const renderVodModal = useMemo(() => {
     return (
       <>
-        <Ads isVisible={showAd}>
+        {/* <Ads isVisible={showAd}>
           <div id="container-7a1cea35756a114959dfd0d55a4bfc2c"></div>
           <button onClick={() => setShowAd(false)}>Close Ads</button>
-        </Ads>
+        </Ads> */}
 
         <ReactPlayer
           url={videoUrl}
