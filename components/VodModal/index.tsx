@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import ReactPlayer from 'react-player';
+import { FaWindowClose } from 'react-icons/fa';
 
 import { Container, Ads } from './styles';
 
@@ -12,10 +13,25 @@ const VodModal = ({ videoUrl }: any) => {
   const renderVodModal = useMemo(() => {
     return (
       <>
-        {/* <Ads isVisible={showAd}>
-          <div id="container-7a1cea35756a114959dfd0d55a4bfc2c"></div>
-          <button onClick={() => setShowAd(false)}>Close Ads</button>
-        </Ads> */}
+        <Ads isVisible={showAd}>
+          <a
+            href="https://ko-fi.com/pogulive"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hey, these servers aren't free...
+            <img
+              className="kofi-img"
+              width="230px"
+              src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
+              alt="Buy Me a Coffee at ko-fi.com"
+            />
+            ... if you can, of course :)
+          </a>
+          <button onClick={() => setShowAd(false)}>
+            <FaWindowClose size={32} />
+          </button>
+        </Ads>
 
         <ReactPlayer
           url={videoUrl}

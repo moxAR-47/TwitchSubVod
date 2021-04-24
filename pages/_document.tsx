@@ -121,6 +121,10 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <meta
+            name="hilltopads-site-verification"
+            content="8f73c806452d052993daa88b6da499af8b51088f"
+          />
         </Head>
         <body>
           <Main />
@@ -138,9 +142,62 @@ export default class MyDocument extends Document {
   `,
             }}
           />
-          <meta
-            name="hilltopads-site-verification"
-            content="8f73c806452d052993daa88b6da499af8b51088f"
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(__htas){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = __htas || {};
+                s.src = "\/\/apprefaculty.pro\/ccHFV\/zMa.E_5kvEdHGOlqmBegUpN\/vrZCGZU_\/teYms9\/uwZJUQlDkjPDT\/QOxINnz\/ko0SMujRkbtbNQDaEN3cOHTGQAzKM\/CNZow-d\/XtNdo\/WCm\/9ouJZJUllsk\/PRTpQQxgNczgkW0fMSjTkbtXNfD\/Ei3jOVTfQdzRMuAg";
+                l.parentNode.insertBefore(s, l);
+                })({})
+            `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(__htas){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = __htas || {};
+                s.src = "\/\/apprefaculty.pro\/atWaZ.yuQ\/2\/9VksZYTS9Q6ybM2r5IlSSpWpQg9XNWDLE\/3kO\/TRQaz\/MHy\/0D0PMiTmcr5pNnDdMX0kJEngBd1FcY2LhBaobR2B5SlZStWBQ-9BNTDKEM3SOPT\/QmzIMry\/0e0iMlThca5\/NCD\/M\/0l";
+                l.parentNode.insertBefore(s, l);
+                })({})
+            `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(__htas){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = __htas || {};
+                s.src = "\/\/apprefaculty.pro\/a.WtZGyRQu2z9jk\/ZGT\/9X6Pb\/2\/5HleSDWTQv9GNdDzE_3HOLT\/QezpN\/SJ0U0CMBTUcF5iN\/DRMs2FJxnbBo1gcX2Xhfapb\/2B5vlMSAW\/QL9xNPDvEZ3oOyTNQ\/zsNNSI0D0RMGTEca5nN\/D\/MJ2L";
+                l.parentNode.insertBefore(s, l);
+                })({})
+            `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(__htas){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.scripts[d.scripts.length - 1];
+                s.settings = __htas || {};
+                s.src = "\/\/apprefaculty.pro\/atWaZ.yuQ\/2\/9VksZYTS9Q6ybM2r5IlSSpWpQg9XNWDLE\/3kO\/TRQaz\/MHy\/0D0PMiTmcr5pNnDdMX0kJEngBd1FcY2LhBaobR2B5SlZStWBQ-9BNTDKEM3SOPT\/QmzIMry\/0e0iMlThca5\/NCD\/M\/0l";
+                l.parentNode.insertBefore(s, l);
+                })({})
+            `,
+            }}
           />
         </body>
       </Html>

@@ -48,16 +48,34 @@ export const Ads = styled.div<AdsProps>`
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  color: #fafafa;
 
+  a {
+    color: #fafafa;
+    background: #323b43;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+
+    :hover {
+      background: #1b2125;
+    }
+  }
   @media (max-width: 768px) {
-    justify-content: flex-start;
+    padding: 0;
+
+    a {
+      padding: 2rem 2rem;
+      margin-top: 0;
+    }
   }
 
   button {
     top: 10%;
+    right: 10%;
     position: absolute;
-    padding: 1rem 2rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 5px;
+    line-height: 0;
     background: var(--purple);
     color: inherit;
     transition: background 0.2s ease;
