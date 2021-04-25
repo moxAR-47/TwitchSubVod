@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .then(async (response) => {
       try {
         return await api
-          .get(`channels/${response.data.users[0]._id}/videos?limit=6`)
+          .get(`channels/${response.data.users[0]._id}/videos?limit=9`)
           .then((channelResponse: any) => {
             if (channelResponse.data.videos.length !== 0)
               return channelResponse.data;

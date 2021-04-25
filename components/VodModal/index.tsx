@@ -26,10 +26,10 @@ const VodModal = ({ videoUrl }: any) => {
               src="https://cdn.ko-fi.com/cdn/kofi5.png?v=2"
               alt="Buy Me a Coffee at ko-fi.com"
             />
-            ... if you can, of course :)
+            <p>{`... if you can, of course :)`}</p>
           </a>
           <button onClick={() => setShowAd(false)}>
-            <FaWindowClose size={32} />
+            Close Reminder <FaWindowClose size={32} />
           </button>
         </Ads>
 

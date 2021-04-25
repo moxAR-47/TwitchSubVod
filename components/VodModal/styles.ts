@@ -56,6 +56,13 @@ export const Ads = styled.div<AdsProps>`
     border-radius: 8px;
     transition: background 0.2s ease;
 
+    p {
+      margin: 0;
+      opacity: 0.4;
+      width: 100%;
+      text-align: end;
+    }
+
     :hover {
       background: #1b2125;
     }
@@ -70,15 +77,22 @@ export const Ads = styled.div<AdsProps>`
   }
 
   button {
-    top: 10%;
-    right: 10%;
+    top: 5%;
+    right: 3%;
     position: absolute;
     padding: 0.1rem 0.3rem;
     border-radius: 5px;
     line-height: 0;
     background: var(--purple);
     color: inherit;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
     transition: background 0.2s ease;
+
+    svg {
+      margin-left: 0.5rem;
+    }
 
     :hover {
       background: var(--dark-purple);

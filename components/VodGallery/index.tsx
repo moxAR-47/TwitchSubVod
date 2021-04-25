@@ -93,15 +93,15 @@ const VodGallery = ({ data }: any) => {
       setError(false);
       api
         .get(
-          `channels/${data[0].channel._id}/videos?limit=6&offset=${
-            next ? offset + 6 : offset - 6
+          `channels/${data[0].channel._id}/videos?limit=9&offset=${
+            next ? offset + 9 : offset - 9
           }`,
         )
         .then((channelResponse: any) => {
           if (channelResponse.data.videos.length !== 0) {
             setTotalVideos(channelResponse.data._total);
             setVideos(channelResponse.data.videos);
-            next ? setOffset(offset + 6) : setOffset(offset - 6);
+            next ? setOffset(offset + 9) : setOffset(offset - 9);
             window.scrollTo({ behavior: 'smooth', top: 340 });
           }
         })
@@ -132,17 +132,6 @@ const VodGallery = ({ data }: any) => {
         </div>
       );
     });
-  }, [videos]);
-
-  const renderAds = useMemo(() => {
-    return (
-      videos && (
-        <div
-          id="container-94a48b4186ad12774b4b3f215a3ae716"
-          className="ad"
-        ></div>
-      )
-    );
   }, [videos]);
 
   return (
@@ -202,7 +191,7 @@ const VodGallery = ({ data }: any) => {
               previous page
             </button>
           )}
-          {offset + 6 < totalVideos && (
+          {offset + 9 < totalVideos && (
             <button
               className="pagination-button"
               type="button"
@@ -212,7 +201,6 @@ const VodGallery = ({ data }: any) => {
             </button>
           )}
         </div>
-        {/* {renderAds} */}
       </Container>
     </>
   );
