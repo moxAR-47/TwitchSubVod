@@ -26,6 +26,7 @@ interface ResultProps {
     logo: string;
     description: string;
     url: string;
+    name: string;
   };
   recorded_at: string;
 }
@@ -56,11 +57,24 @@ const VodGallery = ({ data }: any) => {
   const [error, setError] = useState(false);
 
   const handleVideo = async (result: any) => {
-    const splitString = await result.animated_preview_url.split('/')[3];
+    const splitString = await result.animated_preview_url.match(
+      /^https?:\/\/(?:[\w\.\/]+)\/(.+)\/storyboards/,
+    );
     const hostUrl = await result.animated_preview_url.split('/')[2];
-    let dataUrl = `${process.env.NEXT_PUBLIC_CORS}https://${hostUrl}/${splitString}/${videoQuality}/index-dvr.m3u8`;
+
+    let dataUrl = `${process.env.NEXT_PUBLIC_CORS}https://${hostUrl}/${splitString[1]}/${videoQuality}/index-dvr.m3u8`;
+    let dataUrlUpload = `${process.env.NEXT_PUBLIC_CORS}https://${hostUrl}/${
+      streamerInformation.name
+    }/${result._id.replace('v', '')}/${splitString[1]}/${
+      videoQuality === 'chunked' ? '1080p60' : videoQuality
+    }/index-dvr.m3u8`;
 
     try {
+      if (result.broadcast_type === 'upload') {
+        setVodUrl(dataUrlUpload);
+        return;
+      }
+
       const checkIfVideoExists = await axios.head(`${dataUrl}`);
       if (checkIfVideoExists.status !== 403) {
         setVodUrl(result.broadcast_id !== 1 ? dataUrl : result.url);
@@ -75,7 +89,7 @@ const VodGallery = ({ data }: any) => {
 
     ReactGA.event({
       category: 'SearchedUserForDeletedVod',
-      action: `${splitString}`,
+      action: `${splitString[1]}`,
     });
   };
 
