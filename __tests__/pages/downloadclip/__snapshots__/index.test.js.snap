@@ -3,10 +3,10 @@
 exports[`should render Download Clips correctly 1`] = `
 <div>
   <div
-    class="DownloadClip__Container-sc-1lslxgi-0 cgprHQ"
+    class="DownloadClip__Container-sc-1lslxgi-0 dRsUuF"
   >
     <div
-      class="DownloadClip__AnimationContainer-sc-1lslxgi-1 ffqmEF"
+      class="DownloadClip__AnimationContainer-sc-1lslxgi-1 fWPvEo"
     >
       <h1>
         Twitch Clip Downloader
@@ -50,7 +50,7 @@ exports[`should render Download Clips correctly 1`] = `
         </button>
       </form>
       <div
-        class="styles__Container-cfnpnh-0 iVQCyu"
+        class="styles__Container-cfnpnh-0 fkFsiv"
       >
         <span>
           <svg
@@ -80,7 +80,7 @@ exports[`should render Download Clips correctly 1`] = `
         </span>
       </div>
       <div
-        class="styles__Container-cfnpnh-0 iVQCyu"
+        class="styles__Container-cfnpnh-0 fkFsiv"
       >
         <span>
           <svg
@@ -110,7 +110,7 @@ exports[`should render Download Clips correctly 1`] = `
         </span>
       </div>
       <div
-        class="styles__Container-cfnpnh-0 iVQCyu"
+        class="styles__Container-cfnpnh-0 fkFsiv"
       >
         <span>
           <svg
@@ -142,7 +142,7 @@ exports[`should render Download Clips correctly 1`] = `
       
     </div>
     <div
-      class="styles__Container-w3v8va-0 jtEnOa"
+      class="styles__Container-w3v8va-0 kVLkFL"
     >
       <a
         href="https://ko-fi.com/pogulive"

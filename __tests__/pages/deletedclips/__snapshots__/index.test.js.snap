@@ -3,10 +3,10 @@
 exports[`should render Deleted Clips correctly 1`] = `
 <div>
   <div
-    class="DeletedClips__Container-sc-18jbdtp-0 bhotBv"
+    class="DeletedClips__Container-sc-18jbdtp-0 jbyLTS"
   >
     <div
-      class="DeletedClips__AnimationContainer-sc-18jbdtp-1 hiaomV"
+      class="DeletedClips__AnimationContainer-sc-18jbdtp-1 drDkdI"
     >
       <h1>
         Deleted Twitch Clips
@@ -22,7 +22,7 @@ exports[`should render Deleted Clips correctly 1`] = `
             value=""
           />
           <div
-            class="styles__Container-pgyzn6-0 iSQhKg"
+            class="styles__Container-pgyzn6-0 kCeIyN"
           >
             <div
               class="info-box"
@@ -163,7 +163,7 @@ exports[`should render Deleted Clips correctly 1`] = `
         </button>
       </form>
       <div
-        class="styles__Container-cfnpnh-0 iVQCyu"
+        class="styles__Container-cfnpnh-0 fkFsiv"
       >
         <span>
           <svg
@@ -201,7 +201,7 @@ exports[`should render Deleted Clips correctly 1`] = `
       </div>
     </div>
     <div
-      class="styles__Container-w3v8va-0 jtEnOa"
+      class="styles__Container-w3v8va-0 kVLkFL"
     >
       <a
         href="https://ko-fi.com/pogulive"
