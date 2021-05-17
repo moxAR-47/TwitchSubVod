@@ -3,7 +3,7 @@
 exports[`should render LinkBoxes correctly 1`] = `
 Array [
   <div
-    className="styles__Container-cfnpnh-0 iVQCyu"
+    className="styles__Container-cfnpnh-0 fkFsiv"
   >
     <span
       onClick={[Function]}
@@ -41,7 +41,7 @@ Array [
     </span>
   </div>,
   <div
-    className="styles__Container-cfnpnh-0 iVQCyu"
+    className="styles__Container-cfnpnh-0 fkFsiv"
   >
     <span
       onClick={[Function]}
@@ -79,7 +79,7 @@ Array [
     </span>
   </div>,
   <div
-    className="styles__Container-cfnpnh-0 iVQCyu"
+    className="styles__Container-cfnpnh-0 fkFsiv"
   >
     <span
       onClick={[Function]}
@@ -117,7 +117,7 @@ Array [
     </span>
   </div>,
   <div
-    className="styles__Container-cfnpnh-0 iVQCyu"
+    className="styles__Container-cfnpnh-0 fkFsiv"
   >
     <span
       onClick={[Function]}
@@ -155,7 +155,7 @@ Array [
     </span>
   </div>,
   <div
-    className="styles__Container-cfnpnh-0 iVQCyu"
+    className="styles__Container-cfnpnh-0 fkFsiv"
   >
     <span
       onClick={[Function]}

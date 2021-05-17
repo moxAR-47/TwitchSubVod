@@ -2,10 +2,10 @@
 
 exports[`should render Vod Modal correctly 1`] = `
 <div
-  className="styles__Container-xygqpp-0 hhwJGI"
+  className="styles__Container-xygqpp-0 kpTccR"
 >
   <div
-    className="styles__Ads-xygqpp-1 eMxpga"
+    className="styles__Ads-xygqpp-1 kyhAOP"
   >
     <a
       href="https://ko-fi.com/pogulive"

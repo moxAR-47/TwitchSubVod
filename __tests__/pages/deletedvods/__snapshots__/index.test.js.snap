@@ -3,10 +3,10 @@
 exports[`should render Deleted Vods correctly 1`] = `
 <div>
   <div
-    class="DeletedVods__Container-lbpcr0-0 jJCtcX"
+    class="DeletedVods__Container-lbpcr0-0 dNtvmi"
   >
     <div
-      class="DeletedVods__AnimationContainer-lbpcr0-1 caWxQA"
+      class="DeletedVods__AnimationContainer-lbpcr0-1 gNFmSd"
     >
       <h1>
         Deleted Twitch Vods
@@ -22,7 +22,7 @@ exports[`should render Deleted Vods correctly 1`] = `
             value=""
           />
           <div
-            class="styles__Container-pgyzn6-0 iSQhKg"
+            class="styles__Container-pgyzn6-0 kCeIyN"
           >
             <div
               class="info-box"
@@ -70,7 +70,7 @@ exports[`should render Deleted Vods correctly 1`] = `
           </div>
         </div>
         <div
-          class="styles__Container-ezdgk0-0 eWRZyP"
+          class="styles__Container-ezdgk0-0 dCQtIG"
         >
           <label
             for="quality"
@@ -116,7 +116,7 @@ exports[`should render Deleted Vods correctly 1`] = `
             </option>
           </select>
           <div
-            class="styles__Container-pgyzn6-0 iSQhKg"
+            class="styles__Container-pgyzn6-0 kCeIyN"
           >
             <div
               class="info-box"
@@ -187,7 +187,7 @@ exports[`should render Deleted Vods correctly 1`] = `
         </button>
       </form>
       <div
-        class="styles__Container-cfnpnh-0 iVQCyu"
+        class="styles__Container-cfnpnh-0 fkFsiv"
       >
         <span>
           <svg
@@ -218,7 +218,7 @@ exports[`should render Deleted Vods correctly 1`] = `
       </div>
     </div>
     <div
-      class="styles__Container-w3v8va-0 jtEnOa"
+      class="styles__Container-w3v8va-0 kVLkFL"
     >
       <a
         href="https://ko-fi.com/pogulive"

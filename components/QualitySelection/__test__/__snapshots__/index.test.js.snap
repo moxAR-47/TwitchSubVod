@@ -2,7 +2,7 @@
 
 exports[`should render Quality Selection correctly 1`] = `
 <div
-  className="styles__Container-ezdgk0-0 eWRZyP"
+  className="styles__Container-ezdgk0-0 dCQtIG"
 >
   <label
     htmlFor="quality"
@@ -50,7 +50,7 @@ exports[`should render Quality Selection correctly 1`] = `
     </option>
   </select>
   <div
-    className="styles__Container-pgyzn6-0 iSQhKg"
+    className="styles__Container-pgyzn6-0 kCeIyN"
   >
     <div
       className="info-box"
